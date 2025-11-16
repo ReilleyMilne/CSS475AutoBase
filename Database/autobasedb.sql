@@ -1,0 +1,113 @@
+DROP DATABASE IF EXISTS `autobasedb`;
+CREATE DATABASE `autobasedb`;
+USE `autobasedb`;
+
+
+CREATE TABLE Vehicle (
+    VIN CHAR(17) PRIMARY KEY,
+    Make VARCHAR(50) NOT NULL,
+    Model VARCHAR(50) NOT NULL,
+    Year YEAR NOT NULL,
+    Color VARCHAR(15) NOT NULL,
+    Mileage VARCHAR(6)
+);
+
+CREATE TABLE Customer (
+    CustomerID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(100) NOT NULL,
+    Phone VARCHAR(20) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Address VARCHAR(255) NOT NULL,
+    Gender VARCHAR(10),
+    VIN CHAR(17) NOT NULL,
+    FOREIGN KEY (VIN) REFERENCES Vehicle(VIN)
+		ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE Employee (
+    EmployeeID INT PRIMARY KEY  AUTO_INCREMENT,
+    Name VARCHAR(100) NOT NULL,
+    Department VARCHAR(50) NOT NULL,
+    Phone VARCHAR(20) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    SSN VARCHAR(15) UNIQUE NOT NULL,
+    Gender VARCHAR(10),
+    HireDate DATE NOT NULL,
+    EndDate DATE
+);
+
+CREATE TABLE Part (
+    PartID INT PRIMARY KEY AUTO_INCREMENT,
+    PartName VARCHAR(100) NOT NULL,
+    Price DECIMAL(10,2) NOT NULL,
+    Stock INT NOT NULL
+);
+
+CREATE TABLE SalesOrder (
+    SalesOrderID INT PRIMARY KEY AUTO_INCREMENT,
+    CustomerID INT NOT NULL,
+    SalesEmployeeID INT NOT NULL,
+    VIN CHAR(17) NOT NULL,
+    SalesDate DATE NOT NULL,
+    Price DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (SalesEmployeeID) REFERENCES Employee(EmployeeID)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (VIN) REFERENCES Vehicle(VIN)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE ServiceOrder (
+    ServiceOrderID INT PRIMARY KEY AUTO_INCREMENT,
+    CustomerID INT NOT NULL,
+    VIN CHAR(17) NOT NULL,
+    DateFrom DATE NOT NULL,
+    DateTo DATE NOT NULL,
+    ServiceAdvisorID INT NOT NULL,
+    Price DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (VIN) REFERENCES Vehicle(VIN)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (ServiceAdvisorID) REFERENCES Employee(EmployeeID)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE ServiceLine (
+    ServiceLineID INT PRIMARY KEY AUTO_INCREMENT,
+    ServiceOrderID INT NOT NULL,
+    ServiceType VARCHAR(100) NOT NULL,
+    PartID INT NOT NULL,
+    LaborHours DECIMAL(6,2) NOT NULL,
+    LaborRate DECIMAL(6,2) NOT NULL,
+    FOREIGN KEY (ServiceOrderID) REFERENCES ServiceOrder(ServiceOrderID)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (PartID) REFERENCES Part(PartID)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE EmployeeAuth (
+    EmployeeID INT PRIMARY KEY,
+    Username VARCHAR(100) UNIQUE NOT NULL,
+    PasswordHash VARCHAR(255) NOT NULL,
+    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE CustomerAuth (
+    CustomerID INT PRIMARY KEY,
+    Username VARCHAR(100) UNIQUE NOT NULL,
+    PasswordHash VARCHAR(255) NOT NULL,
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
+        ON DELETE CASCADE
+);
