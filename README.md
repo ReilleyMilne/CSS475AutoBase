@@ -1,6 +1,6 @@
 # CSS475 AutoBase
 
-AutoBase is a Auto Dealership Management project for a CSS 475 class assignment. It includes a simple data pipeline to generate/import SQL data, a Flask backend API for authentication and customer queries, and a minimal frontend that consumes the API.
+This is an Auto Dealership Management project for a CSS 475 class database assignment. It includes a simple data pipeline to generate/import SQL data, a Flask backend API for authentication and customer queries, and a minimal frontend that consumes the API.
 
 This repository contains three main areas:
 
