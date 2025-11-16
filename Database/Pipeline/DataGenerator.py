@@ -101,7 +101,7 @@ class DataGenerator:
             password_hash = hashlib.sha256(random_password.encode()).hexdigest()
 
             insert_sql = (
-                f"INSERT INTO {auth_table_name} ({id_col}, Username, PasswordHash) "
+                f"INSERT INTO {auth_table_name} ({id_col}, Username, Password_Hash) "
                 f"VALUES ({pk_val}, `{username}`, `{password_hash}`);"
             )
             insert_statements.append(insert_sql)

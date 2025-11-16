@@ -16,8 +16,11 @@ def get_customer_vehicles():
     try:
         query = """
             SELECT Vehicle.*
-            FROM Customer, CustomerAuth, Vehicle
-            WHERE Customer.CustomerID = CustomerAuth.CustomerID and Customer.VIN = Vehicle.VIN and Customer.CustomerID = %s
+            FROM Vehicle
+            JOIN CustomerOwnVehicle ON CustomerOwnVehicle.Vehicle_VIN = Vehicle.VIN
+            JOIN Customer ON Customer.ID = CustomerOwnVehicle.Customer_ID
+            JOIN CustomerAuth ON CustomerAuth.Customer_ID = Customer.ID
+            WHERE Customer.ID = %s
             Order By Vehicle.Year DESC;
         """
 
@@ -43,9 +46,12 @@ def get_vehicle_details(vin):
     try:
         query = """
             SELECT Vehicle.*
-            FROM Customer,CustomerAuth,Vehicle
-            WHERE Customer.VIN = Vehicle.VIN and Customer.CustomerID = CustomerAuth.CustomerID and Vehicle.VIN = %s
-            ORDER BY Vehicle.Year DESC;
+            FROM Vehicle
+            JOIN CustomerOwnVehicle ON CustomerOwnVehicle.Vehicle_VIN = Vehicle.VIN
+            JOIN Customer ON Customer.ID = CustomerOwnVehicle.Customer_ID
+            JOIN CustomerAuth ON CustomerAuth.Customer_ID = Customer.ID
+            WHERE Vehicle.VIN = %s
+            Order By Vehicle.Year DESC;
         """
 
         vehicle = execute_query(query, (vin,), fetch_one=True)
@@ -71,9 +77,10 @@ def get_customer_info():
     
     try:
         query = """
-            SELECT Customer.Name, Customer.Phone, Customer.Email, Customer.Address, Customer.Gender
-            FROM Customer,CustomerAuth
-            WHERE Customer.CustomerID = CustomerAuth.CustomerID and CustomerAuth.CustomerID = %s
+            SELECT Customer.Name, Customer.Phone, Customer.Email, Customer.Address, Customer.Gender, Customer.Registration_Date
+            FROM Customer
+            JOIN CustomerAuth ON CustomerAuth.Customer_ID = Customer.ID
+            WHERE Customer.ID = %s;
         """
 
         customer = execute_query(query, (customer_id,), fetch_one=True)

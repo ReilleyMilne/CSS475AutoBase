@@ -29,15 +29,15 @@ def login():
         # Query the appropriate table based on user type
         if user_type == 'employee':
             cursor.execute("SELECT * FROM EmployeeAuth WHERE Username = %s", (username,))
-            id_field = 'EmployeeID'
+            id_field = 'Employee_ID'
         else:
             cursor.execute("SELECT * FROM CustomerAuth WHERE Username = %s", (username,))
-            id_field = 'CustomerID'
+            id_field = 'Customer_ID'
 
         user = cursor.fetchone()
 
         # Check if user exists and password matches
-        if user and user['PasswordHash'] == password:
+        if user and user['Password_Hash'] == password:
             # Create user session data
             user_data = {
                 'username': username,
