@@ -1,0 +1,101 @@
+ServiceLineID,ServiceOrderID,ServiceType,PartID,LaborHours,LaborRate
+1,53,Technical Assistance,53,1,54.64
+2,97,Implementation,97,1,51.71
+3,61,On-site Service,61,3,94.28
+4,88,System Configuration,88,1,48.19
+5,91,Monitoring,91,2,58.54
+6,8,Integration,8,2,63.58
+7,23,Support,23,1,53.22
+8,71,Upgrade,71,1,53.54
+9,98,Installation,98,3,107.74
+10,17,Project Management,17,3,124.22
+11,32,Design,32,2,72.02
+12,48,Data Migration,48,1,23.88
+13,93,Repair,93,1,42.81
+14,20,Customization,20,2,60.02
+15,95,Inspection,95,1,41.79
+16,52,Consulting,52,2,92.36
+17,45,Maintenance,45,1,27.40
+18,36,Remote Assistance,36,1,49.75
+19,39,Troubleshooting,39,1,38.71
+20,56,Training,56,4,137.97
+21,24,Design,24,2,72.96
+22,77,Integration,77,2,81.46
+23,64,Training,64,2,87.18
+24,43,Implementation,43,2,81.64
+25,46,Remote Assistance,46,2,63.43
+26,28,Repair,28,2,82.79
+27,44,On-site Service,44,2,62.01
+28,22,Inspection,22,1,52.86
+29,33,Installation,33,2,93.23
+30,31,Monitoring,31,1,49.90
+31,15,Data Migration,15,1,45.26
+32,50,Support,50,2,56.42
+33,86,Upgrade,86,2,90.67
+34,70,Troubleshooting,70,2,78.47
+35,29,Project Management,29,0,16.59
+36,59,Customization,59,3,95.42
+37,1,System Configuration,1,3,123.88
+38,41,Consulting,41,2,78.61
+39,69,Technical Assistance,69,3,97.51
+40,67,Maintenance,67,2,68.84
+41,75,Consulting,75,2,89.30
+42,57,Troubleshooting,57,3,95.18
+43,65,Project Management,65,2,92.26
+44,7,Design,7,2,91.46
+45,18,Training,18,3,109.09
+46,85,Inspection,85,0,16.13
+47,14,Support,14,1,41.05
+48,68,Technical Assistance,68,1,49.70
+49,47,Maintenance,47,2,88.17
+50,79,On-site Service,79,4,146.34
+51,83,Remote Assistance,83,3,95.71
+52,63,Integration,63,1,49.46
+53,60,Installation,60,3,113.64
+54,96,Customization,96,3,110.49
+55,94,Data Migration,94,2,70.46
+56,76,Implementation,76,2,78.70
+57,38,Monitoring,38,2,62.44
+58,73,Repair,73,3,101.04
+59,66,System Configuration,66,2,66.41
+60,21,Upgrade,21,3,95.37
+61,42,Monitoring,42,3,116.32
+62,80,Integration,80,1,45.33
+63,25,Repair,25,3,107.65
+64,54,On-site Service,54,3,112.24
+65,26,Design,26,2,79.41
+66,62,Data Migration,62,3,103.30
+67,34,Inspection,34,2,88.83
+68,58,Support,58,2,65.12
+69,81,Troubleshooting,81,2,62.88
+70,90,Maintenance,90,2,69.81
+71,11,Customization,11,2,79.44
+72,55,Training,55,3,112.48
+73,100,Upgrade,100,2,74.89
+74,2,Consulting,2,1,48.78
+75,5,Implementation,5,1,49.09
+76,10,Remote Assistance,10,3,107.54
+77,37,Installation,37,2,67.82
+78,19,System Configuration,19,2,68.75
+79,16,Technical Assistance,16,2,76.79
+80,9,Project Management,9,2,78.71
+81,3,Project Management,3,1,45.50
+82,27,Data Migration,27,3,111.18
+83,74,Training,74,1,55.27
+84,13,Repair,13,1,31.97
+85,92,Customization,92,2,68.52
+86,99,Consulting,99,2,87.90
+87,12,Upgrade,12,2,93.34
+88,40,Maintenance,40,3,112.29
+89,30,Design,30,2,86.03
+90,78,Monitoring,78,2,64.75
+91,89,Remote Assistance,89,2,81.78
+92,84,Support,84,2,93.44
+93,72,Technical Assistance,72,1,48.43
+94,4,Troubleshooting,4,2,84.22
+95,35,Implementation,35,3,96.35
+96,87,System Configuration,87,1,49.43
+97,51,Inspection,51,2,68.35
+98,49,Installation,49,2,71.49
+99,82,On-site Service,82,1,55.39
+100,6,Integration,6,2,74.66

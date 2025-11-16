@@ -1,49 +1,110 @@
+:root {
+  --primary: #a685e2;
+  --secondary: #d1b3ff;
+  --background: #f8f5fc;
+  --text: #333;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fafafa;
   margin: 0;
-  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
 }
 
-h1 {
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  padding: 0.8rem 2rem;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left a {
+  color: white;
+  margin-right: 1.2rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-left .logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.nav-right button {
+  background-color: white;
+  color: var(--primary);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.nav-right button:hover {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.content {
+  max-width: 700px;
+  margin: 3rem auto;
   text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+  padding: 2rem;
 }
 
-.controls {
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem auto;
+  width: 300px;
+}
+
+input, select, button {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button[type="submit"] {
+  background: var(--primary);
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: var(--secondary);
+}
+
+footer {
   text-align: center;
-  margin-bottom: 20px;
+  padding: 1rem;
+  color: #555;
+  background: #f0eaff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-select, button {
-  padding: 8px 10px;
-  margin-left: 5px;
-  font-size: 16px;
+.logout-btn {
+    background-color: #d47aff;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
 }
-
-table {
-  border-collapse: collapse;
-  width: 80%;
-  margin: 0 auto;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 10px 12px;
-  text-align: center;
-}
-
-th {
-  background-color: #f4f4f4;
-  font-weight: bold;
-  color: #333;
-}
-
-tr:hover {
-  background-color: #f9f9f9;
+.logout-btn:hover {
+    background-color: #b95fd6;
 }

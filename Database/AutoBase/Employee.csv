@@ -1,0 +1,101 @@
+EmployeeID,Name,Department,Phone,Email,SSN,Gender,HireDate,EndDate
+1,Omar MacInerney,Training and Development,(214) 156-8492,omar.macinerney@yahoo.com,252038493,Transgende,2025-02-16,2025-02-16
+2,Seward Tranter,Procurement,(323) 208-2330,seward.tranter@free.fr,141163070,Other,2024-11-15,2024-11-15
+3,Izabel Clapshaw,Compliance,(404) 098-4621,izabel.clapshaw@gmail.com,210219718,Prefer not,2025-09-12,2025-09-12
+4,Hillyer Helian,Business Development,(303) 834-0876,hillyer.helian@gmail.com,844460990,Nonbinary,2025-01-03,2025-01-03
+5,Jock Westcarr,Product Management,(323) 921-0809,jock.westcarr@t-online.de,142290877,Intersex,2025-01-03,2025-01-03
+6,Loydie Triggs,Administration,(209) 623-6196,loydie.triggs@yahoo.com,752052170,Agender,2025-02-26,2025-02-26
+7,Malina Maudsley,Operations,(530) 272-3292,malina.maudsley@gmail.com,073923571,Genderquee,2025-01-30,2025-01-30
+8,Nichols Doyley,Customer Service,(540) 117-1579,nichols.doyley@gmail.com,559626237,Male,2025-01-22,2025-01-22
+9,Federico Desport,Marketing,(720) 825-0861,federico.desport@gmail.com,282703293,Female,2025-10-27,2025-10-27
+10,Ettore Rubenovic,Engineering,(754) 421-7770,ettore.rubenovic@gmail.com,245711716,Bigender,2025-10-15,2025-10-15
+11,Darcy Traut,Legal,(915) 646-6718,darcy.traut@yahoo.com,143127475,Nonbinary,2025-04-24,2025-04-24
+12,Tracee Floyde,Logistics,(302) 035-1160,tracee.floyde@hotmail.com,483098260,Male,2024-12-12,2024-12-12
+13,Stephanie Pudsey,Sales,(212) 120-7615,stephanie.pudsey@yahoo.com,821567771,Female,2025-01-03,2025-01-03
+14,Bronson Lindman,Public Relations,(706) 569-4551,bronson.lindman@yahoo.com,379887839,Agender,2025-02-18,2025-02-18
+15,Perry Barca,Research and Development,(626) 661-3421,perry.barca@hotmail.co.uk,605659440,Other,2024-12-08,2024-12-08
+16,Nadiya Caughtry,Human Resources,(716) 971-7888,nadiya.caughtry@gmail.com,045120352,Intersex,2025-09-07,2025-09-07
+17,Wandis Stigger,Finance,(310) 222-9276,wandis.stigger@msn.com,573947616,Bigender,2024-11-23,2024-11-23
+18,Richmound Clooney,Facilities Management,(614) 910-5577,richmound.clooney@gmail.com,109829029,Transgende,2025-01-25,2025-01-25
+19,Torry Peerman,Quality Assurance,(405) 811-1930,torry.peerman@verizon.net,410573965,Genderquee,2024-12-06,2024-12-06
+20,Caitlin Prestner,Information Technology,(330) 544-5185,caitlin.prestner@wanadoo.fr,851346622,Prefer not,2025-10-09,2025-10-09
+21,Edvard Chopy,Legal,(425) 005-2210,edvard.chopy@bol.com.br,773217889,Bigender,2025-03-17,2025-03-17
+22,Dehlia Shortall,Administration,(972) 863-7366,dehlia.shortall@aol.com,875587253,Genderquee,2025-06-21,2025-06-21
+23,Rebbecca Weber,Information Technology,(574) 872-6070,rebbecca.weber@att.net,835231985,Female,2025-06-20,2025-06-20
+24,Roshelle Pincott,Procurement,(563) 196-8427,roshelle.pincott@gmail.com,237569113,Nonbinary,2025-06-22,2025-06-22
+25,Kinna Copland,Facilities Management,(434) 495-2277,kinna.copland@hotmail.com,445151931,Intersex,2025-03-01,2025-03-01
+26,Reggis Eley,Sales,(503) 321-3854,reggis.eley@yahoo.fr,731383743,Male,2025-07-21,2025-07-21
+27,Darsey Lodeke,Compliance,(208) 590-4643,darsey.lodeke@yahoo.com.br,467540184,Transgende,2025-03-06,2025-03-06
+28,Jemimah Wem,Research and Development,(602) 599-4943,jemimah.wem@yahoo.com,768220052,Other,2025-02-14,2025-02-14
+29,Constanta Hamlen,Marketing,(704) 880-1690,constanta.hamlen@yahoo.com,315607367,Agender,2025-07-24,2025-07-24
+30,Graehme Aries,Product Management,(803) 574-0433,graehme.aries@yahoo.com,778802126,Prefer not,2025-01-08,2025-01-08
+31,Claudius Abeles,Logistics,(304) 738-4461,claudius.abeles@web.de,546870735,Intersex,2025-01-03,2025-01-03
+32,Corliss Danson,Operations,(209) 798-8526,corliss.danson@orange.fr,829841971,Male,2024-12-19,2024-12-19
+33,Cointon Lyte,Customer Service,(817) 303-6646,cointon.lyte@hotmail.com,385442278,Genderquee,2025-08-06,2025-08-06
+34,Kaylyn Offill,Quality Assurance,(937) 129-5636,kaylyn.offill@bigpond.com,447559588,Other,2025-05-21,2025-05-21
+35,Faber McNelis,Engineering,(305) 378-7571,faber.mcnelis@gmail.com,347324196,Nonbinary,2024-12-08,2024-12-08
+36,Benton Turmall,Public Relations,(706) 130-5587,benton.turmall@hotmail.com,184465915,Bigender,2025-09-04,2025-09-04
+37,Raquel Giordano,Business Development,(912) 988-7519,raquel.giordano@hotmail.com,874044944,Transgende,2025-10-06,2025-10-06
+38,Galvin Quennell,Human Resources,(805) 625-3973,galvin.quennell@gmail.com,540634989,Female,2025-05-30,2025-05-30
+39,Bondie Heak,Training and Development,(925) 091-4449,bondie.heak@yahoo.com,153885618,Agender,2025-08-17,2025-08-17
+40,Alejandrina Gilchriest,Finance,(816) 884-1807,alejandrina.gilchriest@hotmail.com,353055746,Prefer not,2025-04-09,2025-04-09
+41,Erl Maher,Human Resources,(904) 843-7275,erl.maher@gmail.com,818164462,Transgende,2025-09-26,2025-09-26
+42,Sherlock Alliker,Quality Assurance,(312) 530-0635,sherlock.alliker@gmail.com,665381963,Male,2025-08-19,2025-08-19
+43,Micki Ghioni,Engineering,(202) 071-6911,micki.ghioni@yahoo.com,767809296,Prefer not,2025-07-10,2025-07-10
+44,Vanya Cohane,Legal,(804) 845-9448,vanya.cohane@hotmail.fr,501663043,Nonbinary,2025-07-01,2025-07-01
+45,Oliviero McLane,Information Technology,(516) 150-0141,oliviero.mclane@yahoo.co.uk,605435637,Bigender,2025-10-17,2025-10-17
+46,Trixie Vasyunichev,Research and Development,(904) 593-8585,trixie.vasyunichev@hotmail.com,117356881,Agender,2024-11-24,2024-11-24
+47,Katinka Greenley,Operations,(562) 910-4941,katinka.greenley@gmail.com,681380866,Genderquee,2024-12-19,2024-12-19
+48,Sherman Bovis,Training and Development,(217) 730-2723,sherman.bovis@rediffmail.com,282561305,Other,2024-11-19,2024-11-19
+49,Moselle Slaughter,Finance,(518) 304-7929,moselle.slaughter@yahoo.com,073057520,Female,2025-06-27,2025-06-27
+50,Werner Knyvett,Compliance,(215) 531-5558,werner.knyvett@gmail.com,890571806,Intersex,2025-10-16,2025-10-16
+51,Trenna Shanley,Facilities Management,(806) 891-6773,trenna.shanley@hotmail.com,358631887,Bigender,2025-08-11,2025-08-11
+52,Hendrik Boarleyson,Administration,(630) 851-7821,hendrik.boarleyson@yahoo.com,048450912,Transgende,2024-12-20,2024-12-20
+53,Devon Inger,Marketing,(414) 817-8889,devon.inger@yahoo.com,427151808,Genderquee,2025-09-02,2025-09-02
+54,Larine Rosson,Public Relations,(208) 675-0911,larine.rosson@hotmail.com,796117027,Prefer not,2025-10-02,2025-10-02
+55,Darsie Tackley,Logistics,(414) 234-6168,darsie.tackley@t-online.de,655841196,Nonbinary,2025-04-21,2025-04-21
+56,Brittne Redmille,Procurement,(319) 790-6071,brittne.redmille@hotmail.com,163075309,Male,2025-06-03,2025-06-03
+57,Liv Whitlow,Product Management,(724) 053-6159,liv.whitlow@hotmail.com,754276912,Female,2025-03-31,2025-03-31
+58,Gabriell Shedd,Sales,(208) 537-4455,gabriell.shedd@gmail.com,064169778,Agender,2025-10-17,2025-10-17
+59,Ula Ibeson,Business Development,(317) 355-6173,ula.ibeson@hotmail.com,850841378,Other,2025-03-11,2025-03-11
+60,Hermione Skitteral,Customer Service,(612) 412-0410,hermione.skitteral@gmail.com,192021507,Intersex,2025-07-06,2025-07-06
+61,Marilee Laible,Product Management,(718) 049-3808,marilee.laible@live.fr,450048586,Bigender,2025-09-16,2025-09-16
+62,Tarrance Caughte,Administration,(618) 825-8247,tarrance.caughte@yahoo.com,534474693,Genderquee,2025-01-21,2025-01-21
+63,May Girogetti,Sales,(210) 061-8759,may.girogetti@yahoo.com,445917685,Female,2025-08-21,2025-08-21
+64,Tod McQuin,Compliance,(360) 009-2354,tod.mcquin@gmx.de,036277311,Nonbinary,2025-10-27,2025-10-27
+65,Blane Brede,Legal,(616) 218-1041,blane.brede@bigpond.com,152187930,Intersex,2025-06-06,2025-06-06
+66,Noble Cannaway,Logistics,(214) 374-2272,noble.cannaway@hotmail.com,274305266,Male,2025-07-29,2025-07-29
+67,Brittan Burrells,Research and Development,(616) 987-9490,brittan.burrells@aol.com,500533467,Transgende,2025-10-11,2025-10-11
+68,Jaclin Hagyard,Operations,(608) 209-2506,jaclin.hagyard@hotmail.com,354688928,Other,2025-01-27,2025-01-27
+69,Selma Domini,Quality Assurance,(405) 137-5424,selma.domini@yahoo.com,416257822,Agender,2025-01-18,2025-01-18
+70,Joannes Burtt,Finance,(214) 472-9426,joannes.burtt@yahoo.fr,767626907,Prefer not,2025-02-10,2025-02-10
+71,Lion Chadd,Public Relations,(267) 044-6012,lion.chadd@gmail.com,800826567,Transgende,2025-05-29,2025-05-29
+72,Krisha Buffey,Information Technology,(909) 899-3489,krisha.buffey@hotmail.com,372106761,Agender,2025-10-05,2025-10-05
+73,Ricoriki Pruckner,Customer Service,(304) 191-7052,ricoriki.pruckner@gmail.com,379246169,Genderquee,2025-05-06,2025-05-06
+74,Nissie Jerger,Human Resources,(301) 103-7689,nissie.jerger@msn.com,212492052,Prefer not,2024-12-29,2024-12-29
+75,Jilleen Beeres,Procurement,(813) 426-3276,jilleen.beeres@hotmail.com,546791157,Female,2025-01-16,2025-01-16
+76,Mariya Placide,Facilities Management,(251) 561-8336,mariya.placide@yahoo.com,695610534,Intersex,2025-08-30,2025-08-30
+77,Esmeralda Gandar,Marketing,(806) 550-0036,esmeralda.gandar@gmail.com,559274456,Bigender,2025-03-25,2025-03-25
+78,Murial Heineke,Business Development,(609) 017-8313,murial.heineke@yahoo.com,484156658,Male,2025-03-23,2025-03-23
+79,Meaghan Clyde,Training and Development,(415) 863-0086,meaghan.clyde@hotmail.com,556368620,Other,2025-05-15,2025-05-15
+80,Kimberlee Linger,Engineering,(404) 053-6493,kimberlee.linger@gmail.com,877054130,Nonbinary,2025-05-24,2025-05-24
+81,Zilvia McDade,Engineering,(918) 665-9291,zilvia.mcdade@gmail.com,434253809,Agender,2024-11-13,2024-11-13
+82,Gerta Bargery,Logistics,(786) 942-9632,gerta.bargery@hotmail.fr,045117170,Prefer not,2025-09-14,2025-09-14
+83,Hercules Edwick,Information Technology,(260) 530-2880,hercules.edwick@gmail.com,742828256,Intersex,2025-01-26,2025-01-26
+84,Bibbie Caplen,Sales,(339) 098-3972,bibbie.caplen@gmail.com,717870620,Male,2024-11-08,2024-11-08
+85,Gage Kacheler,Public Relations,(813) 900-5502,gage.kacheler@rediffmail.com,135632355,Genderquee,2025-03-14,2025-03-14
+86,Edik Bee,Human Resources,(972) 710-9194,edik.bee@aol.com,009974732,Other,2025-06-13,2025-06-13
+87,Halie Verrier,Customer Service,(914) 441-6746,halie.verrier@gmail.com,094227525,Nonbinary,2025-08-02,2025-08-02
+88,Ilise Popplewell,Finance,(714) 877-3707,ilise.popplewell@laposte.net,332233748,Bigender,2025-09-18,2025-09-18
+89,Mella Mealing,Legal,(240) 582-8557,mella.mealing@gmail.com,400619491,Transgende,2025-08-27,2025-08-27
+90,Inger Coupar,Product Management,(626) 606-0886,inger.coupar@gmail.com,889859491,Female,2025-01-23,2025-01-23
+91,Loella Jezard,Facilities Management,(773) 550-6064,loella.jezard@hotmail.com,226211392,Male,2025-06-16,2025-06-16
+92,Pepillo Laurance,Operations,(972) 479-4979,pepillo.laurance@web.de,709541373,Prefer not,2025-09-21,2025-09-21
+93,Ashton Guest,Training and Development,(786) 622-8073,ashton.guest@hotmail.com,770109427,Nonbinary,2024-12-03,2024-12-03
+94,Leone Ilden,Quality Assurance,(414) 809-3375,leone.ilden@hotmail.com,426904072,Bigender,2025-10-09,2025-10-09
+95,Jeramie Byrne,Procurement,(518) 870-5310,jeramie.byrne@yahoo.fr,541052862,Agender,2025-09-10,2025-09-10
+96,Archibold Longmate,Business Development,(704) 920-2079,archibold.longmate@yahoo.com,697359004,Genderquee,2025-01-17,2025-01-17
+97,Aeriell O'Nion,Research and Development,(716) 910-3412,aeriell.onion@gmail.com,819107053,Other,2025-04-11,2025-04-11
+98,Tore Southwick,Marketing,(850) 528-1271,tore.southwick@comcast.net,173490455,Female,2025-04-17,2025-04-17
+99,Dorrie Walbridge,Compliance,(214) 702-7194,dorrie.walbridge@yahoo.com,692119194,Intersex,2025-01-28,2025-01-28
+100,Maressa Monard,Administration,(602) 778-2675,maressa.monard@hotmail.com,641334265,Transgende,2025-05-06,2025-05-06

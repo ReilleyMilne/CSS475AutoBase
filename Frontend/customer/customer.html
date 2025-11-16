@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoBase | My Account</title>
+  <link rel="stylesheet" href="/Frontend/style.css">
+  <link rel="stylesheet" href="/Frontend/customer/customer.css">
+  <script src="/Frontend/main.js" defer></script>
+  <script src="/Frontend/shared.js" type="module"></script>
+  <script src="/Frontend/customer/customer.js" type="module"></script>
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="content">
+    <div class="dashboard-container">
+      <h2>My Account</h2>
+
+      <div id="accountDetails" class="account-card">
+        <h3>Account Information</h3>
+        <div id="customerInfo" class="info-grid"></div>
+
+        <div id="customerInfoLoading" class="loading">
+          <div class="spinner"></div>
+          <p>Loading your account details...</p>
+        </div>
+
+        <p id="customerInfoError" class="error-message" style="display:none;"></p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>© 2025 AutoBase Inc. All rights reserved.</p>
+  </footer>
+</body>
+</html>
