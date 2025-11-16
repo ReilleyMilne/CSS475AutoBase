@@ -1,101 +1,101 @@
-PartID,PartName,Price,Stock
-1,Spinach and Cheese Quiche,5.49,73
-2,Fleece Hoodie,39.99,69
-3,Raspberry Tart,5.49,126
-4,Peach Salsa,3.29,64
-5,Organic Granola,5.49,78
-6,Herb Seasoned Croutons,2.99,85
-7,Silicone Ice Cube Tray,10.99,71
-8,Hummus Trio Pack,5.49,71
-9,Roasted Garlic Mashed Potatoes,3.99,144
-10,Foldable Picnic Table,49.99,166
-11,Set of Silicone Baking Molds,15.99,96
-12,Cocoa Powder,3.99,32
-13,Tattoo Kit,99.99,57
-14,Adjustable Height Standing Desk Converter,89.99,80
-15,Rolling Cooler,59.99,56
-16,Compact Umbrella,12.99,123
-17,Compact Pop-Up Tent,69.99,37
-18,Chipotle Sauce,3.29,66
-19,Caribbean Jerk Marinade,3.79,52
-20,Bamboo Cutting Board Set,34.99,184
-21,Pet Hair Vacuum Attachment,14.99,97
-22,Classic Cheesecake Mix,4.99,109
-23,Durable Hiking Boots,89.99,116
-24,Manual Coffee Grinder,22.99,109
-25,Creamy Ranch Dressing,2.49,85
-26,Spinach Feta Wraps,4.29,110
-27,Folding Pocket Knife,24.99,83
-28,Chicken Parmesan Dinner Kit,14.99,70
-29,Apple Cinnamon Instant Oatmeal,3.49,124
-30,Ice Cream Scoop,12.99,67
-31,Mushroom Soup (canned),2.49,60
-32,Herb Seasoned Couscous,2.49,75
-33,Insulated Coffee Mug,24.99,121
-34,Infrared Thermometer Gun,29.99,105
-35,Artisan Pickles,2.49,22
-36,Granola Cereal,4.49,127
-37,Measuring Cups Set,19.99,165
-38,Stuffed Bell Peppers,5.99,105
-39,Wrap Front Midi Skirt,44.99,130
-40,Buffalo Cauliflower Wings,6.99,92
-41,Fitness Activity Journal,14.99,119
-42,Lentil Pasta,4.99,127
-43,Truffle Parmesan Fries,4.99,123
-44,Backpack,49.99,122
-45,Dish Rack,24.99,145
-46,Wall Art,45,22
-47,Canned Coconut Milk,1.89,55
-48,LED Desk Lamp with USB Charging Port,29.99,66
-49,Children's Garden Tool Set,22.99,118
-50,Pet Water Fountain with Filtration,39.99,195
-51,Ergonomic Gaming Chair,199.99,128
-52,Cable Knit Cardigan,49.99,66
-53,Stuffed Peppers with Quinoa,7.99,152
-54,LED Canopy Lights,29.99,147
-55,Samsung Galaxy Smartwatch,249.99,94
-56,Pumpkin Ice Cream,4.99,105
-57,Microwave Popcorn Maker,19.99,83
-58,Ginger Turmeric Latte Mix,5.29,135
-59,Digital Kitchen Timer,14.99,89
-60,Cabbage,1.29,127
-61,Wrap Jumpsuit,54.99,155
-62,Portable Massage Gun,79.99,60
-63,Magnetic Spice Containers,24.99,144
-64,Vegan chocolate chip cookies,4.79,150
-65,Asian Stir-Fry Vegetables,2.99,106
-66,Fruit Infuser Water Bottle,15.99,138
-67,Fresh Strawberries,3.99,118
-68,Air Mattress,49.99,87
-69,Jasmine Rice,2.39,84
-70,Magnet Travel Fridge Magnets,12.99,93
-71,Vegetable Potstickers,5.99,106
-72,Trackpad for Laptop,49.99,150
-73,Strawberry Banana Smoothie Pack,4.99,100
-74,LED Strip Light Kit,39.99,65
-75,Saffron Rice Mix,2.99,65
-76,Classic Caesar Dressing,3.49,143
-77,Electric Butter Churn,49.99,90
-78,Elegant Lace Dress,79.99,92
-79,Savory Breakfast Sausage,6.49,102
-80,Chickpea Pasta,4.19,105
-81,Nutty Quinoa Salad,4.99,61
-82,Classic Watch,99.99,148
-83,Window Blinds,59.99,74
-84,Automatic Pet Feeder,69.99,43
-85,Bodyweight Resistance Bands,22.99,91
-86,Almond Joy Munch Bars,1.39,117
-87,Coconut Milk Yogurt,2.99,124
-88,Non-Toxic Concrete Sealer,39.99,150
-89,Sweet Potato Noodles,3.79,115
-90,Portable Ice Maker,199.99,86
-91,Safety First Aid Kit,29.99,109
-92,High-Quality Yoga Mat,34.99,125
-93,Fashionable Belt Bag,34.99,65
-94,Plant Growing Kit,22.99,112
-95,Italian Sausage Links,5.99,128
-96,Bamboo Memory Foam Pillow,34.99,66
-97,Coffee Capsule Dispenser,24.99,91
-98,Ramen Noodles,0.99,95
-99,Pet Hair Removal Brush,14.99,74
-100,Almond Joy Protein Bars,1.99,100
+ID,Name,Price,Stock
+1,Avocado Oil,8.49,63
+2,Pet Water Bottle,18.99,124
+3,Stuffed Peppers with Quinoa,7.99,68
+4,Classic Black Trousers,54.99,45
+5,Spinach and Cheese Stuffed Shells,5.99,107
+6,Crew Neck Sweater,39.99,96
+7,Basil Pesto Pasta,6.49,58
+8,Spicy Chicken Wings,9.99,103
+9,Sour Cream,3.49,116
+10,Shoe Organizer,39.99,88
+11,Electric Griddle with Removable Plates,59.99,75
+12,Car Diagnostic Scanner,49.99,119
+13,Brussels Sprouts,3.49,130
+14,Smartphone Tripod,29.99,112
+15,Safety Pin Dispenser,5.99,145
+16,Frozen Berry Medley,5.49,78
+17,Frozen Mixed Vegetables,1.99,106
+18,Savory Italian Herbs,2.99,142
+19,Customizable Photo Calendar,19.99,143
+20,Dark Chocolate Covered Almonds,7.19,131
+21,Weighted Jump Rope with Counter,14.99,142
+22,Adjustable Kitchen Broom Stand,14.99,83
+23,Trainers with Mesh Inserts,69.99,78
+24,Infrared Space Heater,99.99,130
+25,LED Table Lamp,29.99,76
+26,Sliced Cucumbers,1.29,157
+27,Colorful Post-It Notes Set,9.99,122
+28,Over-the-Door Hooks,12.99,79
+29,Adjustable Laptop Desk,59.99,88
+30,Pistachio Ice Cream,4.99,142
+31,Self-Massaging Pillow,49.99,104
+32,Organic Coconut Water,2.79,142
+33,Vegetarian Sausage Links,5.89,130
+34,Tattoo Kit,99.99,83
+35,Electronic Drum Kit,359.99,138
+36,LED Desk Lamp with USB Charging,39.99,106
+37,Almond Joy Bars,1.29,66
+38,Pineapple Teriyaki Chicken Mix,6.99,94
+39,Pasta Sauce Mix,1.29,100
+40,Crispy Tofu Bites,4.99,110
+41,Chic Ankle Strap Heels,69.99,70
+42,Cinnamon Roll Protein Bar,2.99,100
+43,Non-Toxic Concrete Sealer,39.99,67
+44,Basketball,29.99,60
+45,Chocolate Coconut Granola,3.79,53
+46,Cabbage,1.29,161
+47,Outdoor Adventure Kit,89.99,65
+48,White Rice,1.49,117
+49,Artisan Pickles,2.49,118
+50,Window Blinds,59.99,56
+51,Wireless Car Charger,24.99,100
+52,Digital Kitchen Timer,14.99,133
+53,Chickpea Flour,3.29,151
+54,Balsamic Vinegar,4.99,79
+55,Portable Speakers,69.99,93
+56,Salt and Pepper Grinder Set,19.99,116
+57,Digital Photo Frame,79.99,56
+58,Classic Vanilla Fudge,4.49,130
+59,Compact Digital Camera,249.99,74
+60,Vintage Graphic Tee,25.99,120
+61,Electric Kettle,39.99,87
+62,Training Soccer Ball,19.99,92
+63,Puff Pastry,5.49,118
+64,Adjustable Dog Harness,24.99,48
+65,Pepper Jack Cheese Sticks,2.49,134
+66,Compact Umbrella,12.99,73
+67,Cacao Nibs,6.49,94
+68,Cranberry Lime Sparkling Water,1.5,109
+69,Deluxe First Aid Kit,39.99,89
+70,Coffee Making Kit,44.99,142
+71,Baking Powder,1.79,81
+72,Bamboo Cutting Board,22,61
+73,Smart LED Light Strip,29.99,79
+74,Sporty Leggings,39.99,137
+75,Pork Tenderloin,10.99,145
+76,Adjustable Standing Desk,299.99,138
+77,Water Bottle,18.99,137
+78,Chocolate Mint Cookies,2.29,147
+79,Vegetarian Chili,3.99,106
+80,Mango Sticky Rice Dessert,4.5,121
+81,Magnetic Spice Jars,24.99,130
+82,Streaming Device,49.99,111
+83,Grilled Vegetable Medley,4.49,85
+84,Denim Jacket,69.99,95
+85,Wall-Mounted Bookshelf,39.99,119
+86,Honey Ginger Tea,2.99,110
+87,Peach Fruit Cups,1.99,122
+88,Oatmeal Raisin Cookies,3.49,91
+89,Reusable Silicone Food Storage Bags,19.99,84
+90,Computer Monitor Stand,29.99,94
+91,Cranberry Citrus Sauce,3.99,52
+92,Electric Ice Cream Maker,59.99,79
+93,Portable Solar Path Lights,39.99,142
+94,Pecan Pie Filling,3.99,96
+95,Zesty Cilantro Lime Dressing,3.29,120
+96,Truffle Parmesan Fries,4.99,124
+97,Watercolor Set,19.99,60
+98,Savory Oatmeal,2.49,109
+99,Mushrooms,2.99,98
+100,Chili Lime Corn Chips,2.79,130

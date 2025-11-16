@@ -26,7 +26,7 @@ class DataGenerator:
 
 
     def csv_to_sql(self, csv_content: str, table_name: str) -> str:
-        sql_lines = [f"USE '{self.db_name}';\n"]
+        sql_lines = [f"USE `{self.db_name}`;\n"]
         f = io.StringIO(csv_content)
         reader = csv.reader(f)
         
@@ -35,7 +35,7 @@ class DataGenerator:
         for row in reader:
             row_escaped = [val.replace("'", "''") for val in row]
             values = ", ".join(f"'{val}'" for val in row_escaped)
-            sql_lines.append(f"INSERT INTO '{table_name}' ({', '.join(headers)}) VALUES ({values});")
+            sql_lines.append(f"INSERT INTO `{table_name}` ({', '.join(headers)}) VALUES ({values});")
         
         sql_data = "\n".join(sql_lines)
         return sql_data
@@ -102,7 +102,7 @@ class DataGenerator:
 
             insert_sql = (
                 f"INSERT INTO {auth_table_name} ({id_col}, Username, PasswordHash) "
-                f"VALUES ({pk_val}, '{username}', '{password_hash}');"
+                f"VALUES ({pk_val}, `{username}`, `{password_hash}`);"
             )
             insert_statements.append(insert_sql)
 
@@ -169,23 +169,40 @@ class DataGenerator:
             raise ValueError("Customer table data is empty or missing required columns.")
 
 
+    def convert_csv_to_sql(self, table_name):
+        filename = f"{table_name}.csv"
+        input_file_path = os.path.join(self.csv_input_dir, filename)
+        if os.path.exists(input_file_path):
+            print(f"Converted data from {filename}...")
+
+            sql_data = None
+            with open(input_file_path, "r", encoding="utf-8") as f:
+                csv_content = f.read()
+                sql_data = self.csv_to_sql(csv_content, table_name)
+
+            output_file_path = os.path.join(self.generated_sql_data_dir, f"MOCK_{table_name}_DATA.sql")
+            with open(output_file_path, "w", encoding="utf-8") as f:
+                f.write(sql_data)
+
+            print(f"Converted {filename} successfully.\n")
+        else:
+            print(f"Warning: {filename} not found in {self.csv_input_dir}.")
+
+
     def existing_csv_to_sql(self):
+        # Get all files. Remove when we go through first pass.
+        file_list = []
+        for entry in os.listdir(self.csv_input_dir):
+            full_path = os.path.join(self.csv_input_dir, entry)
+            if os.path.isfile(full_path):
+                entry_name = os.path.splitext(entry)[0]
+                entry_ext = os.path.splitext(entry)[1]
+                if entry_ext == '.csv':
+                    file_list.append(entry_name)
+
         for table_name in self.schemas.keys():
-            filename = f"{table_name}.csv"
-            input_file_path = os.path.join(self.csv_input_dir, filename)
-            if os.path.exists(input_file_path):
-                print(f"Converted data from {filename}...")
-
-                sql_data = None
-                with open(input_file_path, "r", encoding="utf-8") as f:
-                    csv_content = f.read()
-                    sql_data = self.csv_to_sql(csv_content, table_name)
-
-                output_file_path = os.path.join(self.generated_sql_data_dir, f"MOCK_{table_name}_DATA.sql")
-                with open(output_file_path, "w", encoding="utf-8") as f:
-                    f.write(sql_data)
-
-                print(f"Converted {filename} successfully.\n")
-            else:
-                print(f"Warning: {filename} not found in {self.csv_input_dir}.")
+            self.convert_csv_to_sql(table_name)
+            file_list.remove(table_name)
         
+        for table_name in file_list:
+            self.convert_csv_to_sql(table_name)

@@ -27,8 +27,8 @@ mockaroo_schemas = {
     "CustomerAuth": ("", [])
 }
 
-csv_input_dir = "AutoBase"
-generated_sql_data_dir = "MockData"
+csv_input_dir = "./Database/AutoBase"
+generated_sql_data_dir = "./Database/MockData"
 
 if __name__ == "__main__":
     dg = DataGenerator(db_config, mockaroo_api_key, mockaroo_schemas, csv_input_dir, generated_sql_data_dir)
