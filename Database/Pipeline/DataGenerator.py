@@ -6,16 +6,16 @@ import subprocess
 import hashlib
 
 class DataGenerator:
-    def __init__(self, db_config, api_key, schemas, csv_input_dir, generated_sql_data_dir):
+    def __init__(self, db_config, schemas, csv_input_dir, generated_sql_data_dir, mockaroo_api_key=None):
         self.db_name = db_config['database']
         self.schemas = schemas
         self.csv_input_dir = csv_input_dir
         self.generated_sql_data_dir = generated_sql_data_dir
-        self.api_key = api_key
+        self.mockaroo_api_key = mockaroo_api_key
 
 
-    def fetch_mockaroo_csv(self, schema_id: str, count: int, api_key: str) -> str:
-        url = f"https://api.mockaroo.com/api/{schema_id}?count={count}&key={api_key}"
+    def fetch_mockaroo_csv(self, schema_id, count):
+        url = f"https://api.mockaroo.com/api/{schema_id}?count={count}&key={self.mockaroo_api_key}"
         curl_command = ["curl", url]
 
         result = subprocess.run(curl_command, capture_output=True)
@@ -25,7 +25,7 @@ class DataGenerator:
         return result.stdout.decode()
 
 
-    def csv_to_sql(self, csv_content: str, table_name: str) -> str:
+    def csv_to_sql(self, csv_content, table_name):
         sql_lines = [f"USE `{self.db_name}`;\n"]
         f = io.StringIO(csv_content)
         reader = csv.reader(f)
@@ -41,7 +41,7 @@ class DataGenerator:
         return sql_data
 
 
-    def inject_foreign_keys(self, csv_data: str, saved_columns: dict) -> str:
+    def inject_foreign_keys(self, csv_data, saved_columns):
         f = io.StringIO(csv_data)
         reader = csv.reader(f)
         
@@ -66,14 +66,14 @@ class DataGenerator:
         return output.getvalue()
 
 
-    def get_csv_columns(self, csv_data: str) -> list:
+    def get_csv_columns(self, csv_data):
         f = io.StringIO(csv_data)
         reader = csv.reader(f)
         headers = next(reader)
         return headers
 
 
-    def get_column_values_from_csv(self, csv_data: str, column_name: str) -> list:
+    def get_column_values_from_csv(self, csv_data, column_name):
         f = io.StringIO(csv_data)
         reader = csv.reader(f)
         
@@ -86,7 +86,7 @@ class DataGenerator:
         return values
 
 
-    def generate_auth_inserts(self, table_name: str, id_col: str, ids: list, names: list):
+    def generate_auth_inserts(self, table_name, id_col, ids, names):
         if len(ids) != len(names):
             raise ValueError("Length of IDs and Names must match.")
 
@@ -115,14 +115,14 @@ class DataGenerator:
         print(f"Created auth inserts for {table_name} → {file_path}")
 
 
-    def fetch_all_schemas(self, count: int = 1000):
+    def fetch_all_schemas(self, count=1000):
         os.makedirs(self.generated_sql_data_dir, exist_ok=True)
 
         saved_columns = {}
 
         for table_name, (schema_id, keys) in self.schemas.items():
             print(f"Fetching {count} rows for {table_name}...")
-            csv_data = self.fetch_mockaroo_csv(schema_id, count, self.api_key)
+            csv_data = self.fetch_mockaroo_csv(schema_id, count)
             csv_columns = self.get_csv_columns(csv_data)
 
             if table_name not in saved_columns:

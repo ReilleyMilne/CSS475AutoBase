@@ -28,7 +28,7 @@ DB_NAME=your_database_name
 MOCKAROO_API_KEY=your_mockaroo_key_if_using_mockaroo
 ```
 
-**Note:** The `MOCKAROO_API_KEY` is only required if you plan to use `fetch_all_schemas()` in DataGenerator.
+**Note:** The `MOCKAROO_API_KEY` is only required if you plan to use `fetch_all_schemas()` in DataGenerator. However, the Mockaroo schema will still control the generation order, ensuring that any tables with foreign keys are created after their required prerequisite tables.
 
 ## Running the Pipeline
 

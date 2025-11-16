@@ -31,7 +31,7 @@ csv_input_dir = "./Database/AutoBase"
 generated_sql_data_dir = "./Database/MockData"
 
 if __name__ == "__main__":
-    dg = DataGenerator(db_config, mockaroo_api_key, mockaroo_schemas, csv_input_dir, generated_sql_data_dir)
+    dg = DataGenerator(db_config, mockaroo_schemas, csv_input_dir, generated_sql_data_dir, mockaroo_api_key=mockaroo_api_key)
     di = DataInserter(db_config, mockaroo_schemas, generated_sql_data_dir)
     
     # Only use 'dg.fetch_all_schemas' if generated from Mockaroo.
