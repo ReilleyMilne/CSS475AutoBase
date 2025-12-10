@@ -1,101 +1,1001 @@
-ID,Service_Type,Labor_Hours,Labor_Rate
-1,Technical Support,5,47.44
-2,Software Development,10,93.32
-3,Audit,5,51.07
-4,Installation,4,33.48
-5,Integration,9,79.97
-6,Data Migration,8,71.94
-7,Consulting,5,43.26
-8,Network Configuration,8,77.57
-9,Remote Assistance,9,86.90
-10,Maintenance,7,65.89
-11,Project Management,6,56.39
-12,Troubleshooting,9,88.99
-13,System Monitoring,10,97.78
-14,Training,9,83.82
-15,Implementation,12,108.86
-16,On-site Service,6,58.35
-17,Upgrade,9,79.69
-18,Inspection,11,106.16
-19,Repair,11,107.45
-20,Customization,11,98.56
-21,Data Migration,11,106.13
-22,Repair,7,62.61
-23,Installation,6,58.34
-24,Troubleshooting,10,97.82
-25,Inspection,6,56.83
-26,Integration,13,117.52
-27,Software Development,10,91.68
-28,Customization,6,59.56
-29,Audit,7,65.86
-30,Implementation,11,106.32
-31,Maintenance,8,77.86
-32,System Monitoring,11,106.15
-33,Consulting,10,97.87
-34,Remote Assistance,7,62.28
-35,Network Configuration,11,103.71
-36,Technical Support,8,79.50
-37,Training,5,49.46
-38,Project Management,8,70.53
-39,On-site Service,8,75.00
-40,Upgrade,9,82.67
-41,Training,6,52.12
-42,Network Configuration,8,75.27
-43,Repair,5,49.98
-44,Maintenance,5,45.00
-45,Troubleshooting,4,39.60
-46,Software Development,13,120.44
-47,Audit,5,48.43
-48,Technical Support,9,87.94
-49,On-site Service,9,88.25
-50,Remote Assistance,4,42.21
-51,Integration,8,75.25
-52,Upgrade,11,99.72
-53,Inspection,12,113.11
-54,Customization,6,58.95
-55,Project Management,7,69.39
-56,System Monitoring,9,87.31
-57,Consulting,4,42.01
-58,Implementation,10,97.73
-59,Installation,6,55.66
-60,Data Migration,10,89.74
-61,On-site Service,7,65.42
-62,Repair,7,69.26
-63,Project Management,9,88.47
-64,Software Development,4,35.76
-65,Training,11,100.23
-66,Network Configuration,6,54.84
-67,Customization,8,70.50
-68,Maintenance,9,82.02
-69,Installation,7,66.44
-70,Technical Support,11,106.83
-71,Integration,6,60.73
-72,Consulting,5,45.99
-73,Upgrade,6,59.47
-74,Troubleshooting,11,102.46
-75,Data Migration,12,108.59
-76,Remote Assistance,11,103.66
-77,System Monitoring,11,102.99
-78,Implementation,12,110.34
-79,Inspection,8,79.68
-80,Audit,10,90.76
-81,Upgrade,10,97.21
-82,Project Management,9,83.51
-83,Data Migration,7,64.05
-84,Implementation,8,71.59
-85,Troubleshooting,10,89.51
-86,Training,9,82.62
-87,Installation,10,91.30
-88,On-site Service,7,68.23
-89,Maintenance,7,62.84
-90,Integration,8,70.39
-91,Repair,4,39.29
-92,Software Development,6,59.20
-93,Customization,11,106.69
-94,Remote Assistance,8,71.93
-95,Technical Support,10,90.30
-96,Inspection,10,92.69
-97,System Monitoring,5,44.64
-98,Consulting,9,81.84
-99,Network Configuration,8,73.54
-100,Audit,10,97.23
+ID,Service_Order_ID,Service_Type,Labor_Hours,Labor_Rate
+1,518,Technical Support,7,93.63
+2,102,Performance Optimization,4,44.11
+3,930,Installation,3,33.97
+4,959,Network Setup,3,39.33
+5,798,Software Development,4,48.83
+6,203,System Integration,1,12.64
+7,233,Emergency Response,4,48.96
+8,239,Maintenance,4,56.25
+9,320,Warranty Service,5,61.87
+10,166,Consulting,5,64.44
+11,47,Troubleshooting,3,41.93
+12,113,Security Assessment,4,49.45
+13,827,Upgrade,3,32.51
+14,920,Data Migration,3,41.67
+15,903,Remote Assistance,5,62.86
+16,860,Training,4,48.66
+17,294,Repair,4,52.98
+18,451,On-site Service,3,37.84
+19,964,Product Customization,4,52.46
+20,941,Customer Service,5,62.68
+21,531,Installation,4,50.93
+22,857,Network Setup,5,65.04
+23,529,Emergency Response,5,64.44
+24,61,Repair,6,70.98
+25,11,Upgrade,6,78.46
+26,140,Software Development,4,53.86
+27,761,Data Migration,5,57.41
+28,245,System Integration,4,46.55
+29,6,Warranty Service,5,68.10
+30,646,Consulting,5,58.93
+31,321,Security Assessment,3,41.59
+32,756,Technical Support,3,33.66
+33,643,Remote Assistance,6,78.57
+34,285,Troubleshooting,3,41.86
+35,227,Training,3,35.77
+36,421,On-site Service,5,64.98
+37,41,Performance Optimization,5,60.13
+38,275,Maintenance,3,37.54
+39,772,Product Customization,6,75.72
+40,937,Customer Service,2,30.87
+41,125,Warranty Service,7,82.40
+42,301,Network Setup,6,75.84
+43,397,Troubleshooting,4,51.00
+44,388,Repair,6,71.26
+45,748,Upgrade,3,37.08
+46,946,Installation,5,56.67
+47,161,Data Migration,6,76.44
+48,360,Remote Assistance,4,45.88
+49,429,Emergency Response,2,23.11
+50,249,Maintenance,3,41.75
+51,325,System Integration,3,33.61
+52,437,Customer Service,4,54.17
+53,280,Consulting,3,35.01
+54,69,Technical Support,4,48.09
+55,43,Performance Optimization,3,37.79
+56,465,Software Development,2,24.11
+57,603,Training,6,74.81
+58,768,Security Assessment,6,68.91
+59,745,On-site Service,2,29.78
+60,516,Product Customization,3,39.51
+61,202,Data Migration,5,65.56
+62,415,Warranty Service,4,53.09
+63,724,Network Setup,5,58.51
+64,674,Training,3,37.86
+65,805,Customer Service,5,56.93
+66,614,Upgrade,5,61.43
+67,593,Technical Support,5,65.16
+68,191,Product Customization,4,50.02
+69,871,Emergency Response,4,53.20
+70,785,Installation,6,70.97
+71,988,Remote Assistance,4,45.49
+72,287,Security Assessment,4,55.54
+73,420,System Integration,4,53.03
+74,92,Repair,5,63.22
+75,70,Consulting,4,51.27
+76,126,Maintenance,2,24.10
+77,56,Performance Optimization,3,37.68
+78,699,Troubleshooting,7,83.35
+79,880,Software Development,3,42.69
+80,467,On-site Service,5,58.51
+81,371,Repair,4,47.41
+82,508,Installation,2,26.50
+83,818,Training,5,66.73
+84,246,Software Development,3,39.21
+85,695,System Integration,3,42.54
+86,16,Troubleshooting,3,34.65
+87,283,Customer Service,6,71.70
+88,537,Performance Optimization,5,66.52
+89,862,Upgrade,3,39.43
+90,347,Data Migration,3,32.99
+91,143,Warranty Service,4,45.81
+92,406,Emergency Response,3,37.50
+93,297,Security Assessment,5,66.11
+94,20,Maintenance,6,71.31
+95,822,On-site Service,4,55.56
+96,917,Technical Support,5,56.61
+97,581,Product Customization,3,41.66
+98,114,Remote Assistance,2,27.36
+99,859,Network Setup,3,42.54
+100,107,Consulting,3,38.59
+101,753,Security Assessment,4,47.64
+102,302,Technical Support,5,61.80
+103,160,System Integration,2,28.75
+104,902,Network Setup,3,41.50
+105,22,Consulting,4,55.16
+106,85,Customer Service,4,44.48
+107,575,Troubleshooting,4,47.65
+108,952,Installation,4,50.81
+109,652,On-site Service,2,23.20
+110,106,Warranty Service,4,48.38
+111,740,Emergency Response,5,66.55
+112,899,Software Development,5,60.47
+113,79,Training,4,46.07
+114,836,Maintenance,5,63.15
+115,44,Remote Assistance,6,77.91
+116,473,Upgrade,4,47.73
+117,841,Product Customization,2,27.45
+118,909,Repair,3,36.80
+119,462,Data Migration,3,39.67
+120,328,Performance Optimization,5,64.18
+121,681,Software Development,2,31.01
+122,666,Data Migration,5,60.65
+123,767,Remote Assistance,5,68.18
+124,60,Training,2,25.70
+125,654,Customer Service,5,64.34
+126,558,Repair,5,60.37
+127,207,Security Assessment,2,29.88
+128,619,Technical Support,3,40.02
+129,705,Product Customization,3,36.61
+130,514,Performance Optimization,5,58.96
+131,119,Troubleshooting,3,40.26
+132,636,Installation,6,76.45
+133,873,System Integration,2,29.73
+134,183,Emergency Response,4,50.30
+135,184,On-site Service,3,40.84
+136,683,Network Setup,5,65.20
+137,444,Maintenance,3,38.24
+138,776,Warranty Service,3,39.28
+139,181,Upgrade,5,58.39
+140,100,Consulting,5,57.73
+141,846,Data Migration,5,66.88
+142,303,Warranty Service,2,25.33
+143,944,Troubleshooting,4,53.17
+144,694,Technical Support,3,31.58
+145,163,Network Setup,4,56.16
+146,956,Software Development,6,78.71
+147,443,Remote Assistance,7,83.88
+148,435,Upgrade,4,44.61
+149,546,System Integration,1,12.86
+150,286,Customer Service,4,49.70
+151,813,On-site Service,6,72.89
+152,132,Product Customization,4,51.66
+153,129,Consulting,4,55.35
+154,842,Security Assessment,3,34.72
+155,369,Installation,3,41.85
+156,146,Performance Optimization,3,39.59
+157,870,Training,3,32.10
+158,816,Emergency Response,5,65.52
+159,87,Repair,4,52.33
+160,252,Maintenance,5,58.83
+161,503,Troubleshooting,3,42.68
+162,953,Repair,3,33.89
+163,922,Upgrade,8,96.77
+164,765,Installation,2,27.93
+165,158,Data Migration,2,25.50
+166,422,Remote Assistance,3,32.07
+167,620,Emergency Response,3,35.84
+168,211,Maintenance,4,49.99
+169,762,System Integration,4,49.01
+170,533,Customer Service,4,51.86
+171,791,Consulting,4,48.27
+172,971,Technical Support,4,48.16
+173,34,Performance Optimization,6,81.28
+174,292,Software Development,4,55.74
+175,63,Training,4,54.65
+176,869,Security Assessment,6,74.13
+177,927,On-site Service,4,56.23
+178,990,Product Customization,4,52.74
+179,13,Warranty Service,4,50.00
+180,474,Network Setup,3,36.15
+181,408,Customer Service,3,31.50
+182,289,Software Development,3,43.37
+183,138,Data Migration,4,49.26
+184,200,Network Setup,3,43.15
+185,273,Security Assessment,3,31.52
+186,266,Emergency Response,6,72.01
+187,991,Consulting,4,46.44
+188,582,On-site Service,4,53.96
+189,843,Warranty Service,3,43.42
+190,288,Repair,4,44.36
+191,567,Technical Support,3,41.82
+192,157,Product Customization,6,75.42
+193,46,Training,4,47.43
+194,628,Troubleshooting,5,68.70
+195,854,Upgrade,5,60.22
+196,701,Maintenance,5,65.72
+197,291,Installation,5,63.59
+198,45,System Integration,7,90.78
+199,729,Remote Assistance,2,25.36
+200,343,Performance Optimization,1,14.12
+201,915,Warranty Service,4,50.16
+202,790,Upgrade,5,58.79
+203,907,Product Customization,3,33.71
+204,261,Security Assessment,5,68.40
+205,549,Emergency Response,2,29.04
+206,383,Installation,3,35.98
+207,852,System Integration,6,73.34
+208,164,Training,5,58.58
+209,364,Repair,4,45.09
+210,707,Maintenance,5,67.77
+211,151,Technical Support,3,41.91
+212,141,Data Migration,3,37.22
+213,788,Network Setup,4,51.94
+214,669,Performance Optimization,1,17.37
+215,399,Consulting,3,33.09
+216,251,Troubleshooting,5,61.62
+217,241,Software Development,4,50.91
+218,225,Remote Assistance,4,54.59
+219,104,Customer Service,4,53.55
+220,523,On-site Service,5,64.79
+221,230,On-site Service,4,44.49
+222,380,Remote Assistance,3,37.01
+223,801,Repair,3,36.08
+224,65,Customer Service,4,56.14
+225,254,Data Migration,4,47.17
+226,890,Consulting,4,45.25
+227,938,Installation,4,45.50
+228,521,Product Customization,5,56.80
+229,861,Emergency Response,2,27.06
+230,478,Software Development,5,66.43
+231,50,System Integration,3,36.17
+232,908,Warranty Service,1,15.99
+233,430,Performance Optimization,4,51.85
+234,348,Training,4,54.39
+235,714,Security Assessment,3,43.28
+236,298,Upgrade,5,62.47
+237,969,Maintenance,5,67.67
+238,627,Technical Support,4,50.04
+239,660,Network Setup,7,91.03
+240,171,Troubleshooting,3,33.16
+241,901,System Integration,5,58.11
+242,541,Customer Service,2,26.26
+243,480,Consulting,4,46.36
+244,344,Technical Support,5,58.00
+245,749,Performance Optimization,4,47.82
+246,440,Software Development,4,54.76
+247,1000,Training,2,29.92
+248,979,Security Assessment,4,45.73
+249,727,On-site Service,4,52.43
+250,78,Product Customization,6,74.30
+251,832,Warranty Service,3,42.57
+252,73,Network Setup,4,53.84
+253,757,Troubleshooting,1,16.27
+254,834,Repair,4,45.97
+255,361,Upgrade,4,49.51
+256,196,Installation,2,30.63
+257,398,Data Migration,3,41.65
+258,511,Remote Assistance,3,39.18
+259,743,Emergency Response,4,47.70
+260,881,Maintenance,3,38.65
+261,556,Product Customization,5,57.30
+262,257,Remote Assistance,6,76.90
+263,489,Network Setup,5,63.84
+264,623,Consulting,5,56.55
+265,264,Repair,3,31.81
+266,391,Installation,3,40.42
+267,933,Training,4,53.36
+268,726,Software Development,4,50.54
+269,378,System Integration,4,53.63
+270,782,Troubleshooting,4,55.94
+271,957,Customer Service,4,55.42
+272,833,Performance Optimization,3,38.13
+273,442,Upgrade,4,52.71
+274,177,Data Migration,4,53.73
+275,89,Warranty Service,3,34.92
+276,194,Emergency Response,5,63.78
+277,452,Security Assessment,3,34.73
+278,410,Maintenance,6,77.58
+279,936,On-site Service,5,66.47
+280,875,Technical Support,5,66.23
+281,943,On-site Service,3,34.97
+282,958,Data Migration,3,33.25
+283,118,Product Customization,6,71.79
+284,495,Training,2,28.54
+285,527,Security Assessment,6,76.74
+286,665,Network Setup,3,41.54
+287,797,Upgrade,4,55.21
+288,318,System Integration,3,39.07
+289,220,Repair,2,25.64
+290,793,Customer Service,2,24.22
+291,612,Technical Support,7,83.31
+292,262,Warranty Service,6,73.15
+293,891,Troubleshooting,3,39.73
+294,173,Installation,2,23.95
+295,649,Remote Assistance,3,38.53
+296,732,Performance Optimization,7,83.88
+297,758,Consulting,3,37.58
+298,37,Emergency Response,4,53.39
+299,131,Software Development,3,41.95
+300,375,Maintenance,4,53.17
+301,688,Customer Service,6,76.37
+302,615,Maintenance,4,51.47
+303,992,Data Migration,5,64.23
+304,416,Product Customization,4,44.35
+305,485,Network Setup,5,58.63
+306,877,Training,3,40.27
+307,221,Consulting,3,33.46
+308,219,Upgrade,2,30.93
+309,58,Software Development,4,50.23
+310,629,Installation,3,32.00
+311,155,System Integration,3,42.16
+312,242,Performance Optimization,4,53.75
+313,663,Repair,5,63.72
+314,268,Technical Support,3,38.28
+315,942,Warranty Service,6,73.44
+316,605,Security Assessment,2,25.80
+317,680,Troubleshooting,5,58.53
+318,863,Emergency Response,5,67.79
+319,307,On-site Service,4,54.74
+320,499,Remote Assistance,1,14.81
+321,174,Performance Optimization,2,26.53
+322,373,Maintenance,5,61.13
+323,248,Warranty Service,4,48.82
+324,710,Software Development,5,62.32
+325,112,Product Customization,5,65.24
+326,81,Troubleshooting,3,40.44
+327,498,Technical Support,2,28.04
+328,717,Remote Assistance,3,34.83
+329,281,Emergency Response,3,42.84
+330,742,Upgrade,4,44.67
+331,172,On-site Service,5,61.17
+332,144,Data Migration,4,43.76
+333,278,System Integration,7,82.60
+334,662,Training,4,50.05
+335,71,Consulting,4,53.01
+336,594,Customer Service,5,57.40
+337,426,Security Assessment,5,67.08
+338,911,Installation,4,52.02
+339,564,Network Setup,4,56.05
+340,162,Repair,4,46.23
+341,90,Upgrade,5,59.90
+342,588,Technical Support,3,34.43
+343,12,Remote Assistance,4,47.46
+344,989,Network Setup,5,56.27
+345,703,Performance Optimization,3,39.26
+346,800,Repair,3,42.99
+347,882,Security Assessment,3,37.08
+348,91,Software Development,5,63.07
+349,671,On-site Service,5,58.66
+350,586,Warranty Service,5,57.99
+351,576,Customer Service,1,17.78
+352,568,Installation,6,73.30
+353,468,Product Customization,2,23.09
+354,993,Troubleshooting,5,63.61
+355,602,Data Migration,6,72.90
+356,395,Emergency Response,2,31.13
+357,423,Training,4,53.45
+358,21,Maintenance,4,50.47
+359,561,System Integration,3,34.62
+360,447,Consulting,5,67.83
+361,445,Performance Optimization,4,53.54
+362,446,Customer Service,4,56.23
+363,322,Security Assessment,4,54.28
+364,982,Software Development,2,22.06
+365,55,Maintenance,4,52.49
+366,346,Product Customization,7,86.64
+367,879,Network Setup,3,35.88
+368,751,Emergency Response,4,53.28
+369,324,Upgrade,6,78.51
+370,189,Warranty Service,3,41.70
+371,590,Repair,3,32.17
+372,565,Data Migration,4,54.52
+373,293,Consulting,3,34.71
+374,550,Technical Support,6,77.08
+375,658,Training,4,54.18
+376,513,Installation,4,51.30
+377,4,Remote Assistance,5,59.71
+378,849,Troubleshooting,6,76.98
+379,997,On-site Service,3,37.23
+380,634,System Integration,5,64.52
+381,978,System Integration,4,53.92
+382,392,Consulting,6,78.31
+383,232,Maintenance,4,45.54
+384,655,Product Customization,4,56.24
+385,317,Repair,6,69.95
+386,180,Troubleshooting,3,35.03
+387,123,Data Migration,3,43.52
+388,573,Training,6,80.63
+389,972,Software Development,6,72.63
+390,240,Network Setup,5,57.18
+391,700,Customer Service,4,50.34
+392,635,Upgrade,5,61.24
+393,491,Installation,4,45.32
+394,624,Technical Support,5,57.06
+395,651,Remote Assistance,6,72.82
+396,309,Warranty Service,5,64.01
+397,24,Performance Optimization,3,41.17
+398,93,Emergency Response,5,58.15
+399,610,Security Assessment,5,63.81
+400,494,On-site Service,2,25.94
+401,120,Remote Assistance,4,48.25
+402,844,Consulting,7,81.62
+403,967,Repair,3,41.42
+404,176,Software Development,4,54.84
+405,555,Installation,3,39.95
+406,509,On-site Service,2,23.64
+407,363,System Integration,3,35.63
+408,621,Product Customization,4,50.58
+409,130,Warranty Service,5,64.57
+410,42,Training,3,33.46
+411,910,Troubleshooting,4,55.95
+412,746,Maintenance,5,64.03
+413,706,Performance Optimization,3,34.99
+414,488,Upgrade,3,31.30
+415,122,Customer Service,2,28.51
+416,885,Data Migration,5,65.26
+417,454,Emergency Response,5,62.31
+418,222,Technical Support,6,74.70
+419,794,Network Setup,3,39.09
+420,10,Security Assessment,5,62.55
+421,492,Remote Assistance,3,43.40
+422,381,Consulting,5,56.72
+423,677,Repair,5,56.93
+424,507,Software Development,4,53.51
+425,32,Installation,8,96.31
+426,414,On-site Service,3,34.50
+427,192,System Integration,1,11.42
+428,470,Product Customization,5,62.11
+429,592,Warranty Service,6,79.34
+430,585,Training,1,18.37
+431,735,Troubleshooting,3,43.43
+432,450,Maintenance,3,40.78
+433,780,Performance Optimization,4,49.57
+434,152,Upgrade,2,21.49
+435,984,Customer Service,7,91.75
+436,923,Data Migration,4,46.47
+437,787,Emergency Response,7,87.12
+438,542,Technical Support,4,49.94
+439,139,Network Setup,3,40.82
+440,728,Security Assessment,6,71.58
+441,342,Remote Assistance,5,66.26
+442,439,Customer Service,1,11.48
+443,431,On-site Service,4,55.50
+444,986,Warranty Service,4,48.66
+445,376,Upgrade,4,50.30
+446,574,Product Customization,4,43.98
+447,149,Security Assessment,3,39.16
+448,329,Emergency Response,6,80.52
+449,577,Installation,3,34.24
+450,679,System Integration,5,56.54
+451,412,Training,3,42.50
+452,580,Repair,4,49.10
+453,358,Maintenance,4,52.74
+454,519,Technical Support,3,41.66
+455,981,Data Migration,4,51.86
+456,970,Network Setup,4,53.31
+457,639,Performance Optimization,5,63.15
+458,848,Consulting,6,77.32
+459,304,Troubleshooting,2,25.18
+460,760,Software Development,3,40.87
+461,490,Performance Optimization,6,72.99
+462,352,Security Assessment,5,61.14
+463,212,Data Migration,7,81.43
+464,260,Training,6,69.43
+465,103,Installation,3,40.11
+466,744,Network Setup,7,81.79
+467,528,Maintenance,3,42.15
+468,829,Remote Assistance,3,32.42
+469,362,Repair,2,30.37
+470,650,Warranty Service,3,39.35
+471,935,Customer Service,2,28.71
+472,799,Software Development,5,59.81
+473,769,Technical Support,3,42.21
+474,704,System Integration,6,70.49
+475,214,Product Customization,2,30.00
+476,570,Consulting,4,45.74
+477,530,Emergency Response,5,64.84
+478,455,Troubleshooting,3,41.11
+479,449,Upgrade,7,85.63
+480,18,On-site Service,3,37.91
+481,436,Installation,3,32.11
+482,696,Product Customization,5,62.22
+483,775,Troubleshooting,5,63.47
+484,237,Data Migration,4,46.99
+485,510,Emergency Response,4,44.14
+486,57,Training,5,59.61
+487,939,Maintenance,5,61.86
+488,774,System Integration,4,45.24
+489,783,Consulting,4,52.56
+490,784,Upgrade,4,49.74
+491,600,Technical Support,4,45.46
+492,463,Remote Assistance,2,27.38
+493,866,Network Setup,6,79.77
+494,520,Performance Optimization,4,52.63
+495,709,Repair,2,27.36
+496,461,Security Assessment,3,32.82
+497,826,Software Development,4,50.62
+498,731,On-site Service,4,53.22
+499,204,Warranty Service,2,20.63
+500,702,Customer Service,6,76.14
+501,808,Security Assessment,3,32.33
+502,244,Software Development,4,53.20
+503,687,Maintenance,6,71.35
+504,876,Product Customization,6,71.36
+505,295,Network Setup,4,55.97
+506,535,Emergency Response,3,38.99
+507,459,Upgrade,2,24.19
+508,77,Warranty Service,3,36.94
+509,216,Repair,2,26.86
+510,150,Data Migration,6,68.87
+511,928,Consulting,5,64.13
+512,738,Technical Support,1,13.74
+513,39,Training,2,26.71
+514,438,Installation,4,49.90
+515,999,Remote Assistance,4,49.69
+516,961,Troubleshooting,5,63.60
+517,682,On-site Service,5,57.55
+518,477,System Integration,6,70.12
+519,68,Performance Optimization,5,56.98
+520,720,Customer Service,3,37.95
+521,960,Data Migration,6,73.29
+522,711,System Integration,4,45.02
+523,715,Remote Assistance,4,47.08
+524,599,Warranty Service,4,55.90
+525,913,Customer Service,3,36.92
+526,828,Troubleshooting,5,63.71
+527,965,Security Assessment,4,51.84
+528,916,Maintenance,4,54.83
+529,35,Product Customization,5,63.56
+530,312,Consulting,6,72.32
+531,815,Software Development,4,53.37
+532,156,Emergency Response,4,48.29
+533,96,Technical Support,5,65.06
+534,382,Training,4,51.38
+535,236,On-site Service,4,53.50
+536,940,Network Setup,2,30.21
+537,894,Upgrade,3,32.90
+538,255,Performance Optimization,3,38.38
+539,175,Repair,4,48.04
+540,763,Installation,6,73.87
+541,955,Repair,4,43.81
+542,838,Software Development,3,31.28
+543,889,Technical Support,4,53.08
+544,76,System Integration,3,34.83
+545,448,Training,5,60.75
+546,2,Upgrade,3,37.91
+547,186,Consulting,4,51.64
+548,29,On-site Service,4,49.70
+549,441,Performance Optimization,4,47.99
+550,272,Installation,4,45.16
+551,386,Warranty Service,4,49.42
+552,604,Security Assessment,5,66.07
+553,723,Data Migration,1,14.39
+554,505,Network Setup,4,54.56
+555,270,Troubleshooting,5,65.01
+556,887,Maintenance,3,31.78
+557,617,Product Customization,7,82.91
+558,802,Remote Assistance,4,44.85
+559,770,Emergency Response,4,47.42
+560,892,Customer Service,6,76.34
+561,544,Remote Assistance,3,38.31
+562,145,Warranty Service,3,39.92
+563,883,Customer Service,5,62.80
+564,31,Troubleshooting,5,57.02
+565,886,Security Assessment,4,48.47
+566,895,Maintenance,7,87.25
+567,538,Product Customization,2,28.96
+568,271,Consulting,3,41.58
+569,526,Software Development,3,35.51
+570,692,Emergency Response,5,67.57
+571,134,Technical Support,3,34.15
+572,231,Training,5,65.57
+573,300,On-site Service,6,80.97
+574,653,Network Setup,5,57.09
+575,559,Upgrade,4,51.40
+576,282,Performance Optimization,7,84.32
+577,62,Repair,4,54.89
+578,115,Installation,5,59.56
+579,633,Data Migration,3,38.78
+580,256,System Integration,4,47.18
+581,366,Security Assessment,1,15.37
+582,598,Remote Assistance,4,47.61
+583,856,Consulting,3,36.54
+584,49,Repair,4,48.19
+585,167,Software Development,4,49.16
+586,59,Installation,4,47.42
+587,950,On-site Service,3,32.97
+588,670,System Integration,4,55.04
+589,190,Product Customization,6,69.94
+590,457,Warranty Service,6,77.44
+591,356,Training,3,35.46
+592,786,Troubleshooting,4,44.13
+593,584,Maintenance,3,32.85
+594,601,Performance Optimization,3,39.36
+595,645,Upgrade,4,52.47
+596,500,Customer Service,1,16.21
+597,945,Data Migration,2,31.13
+598,697,Emergency Response,4,54.62
+599,487,Technical Support,3,40.79
+600,3,Network Setup,2,27.62
+601,947,System Integration,2,31.07
+602,921,Training,2,22.02
+603,560,Upgrade,5,57.00
+604,475,Consulting,5,60.48
+605,234,On-site Service,2,25.50
+606,400,Performance Optimization,2,18.89
+607,493,Installation,5,58.28
+608,563,Warranty Service,5,59.25
+609,752,Security Assessment,5,57.36
+610,117,Data Migration,3,34.99
+611,277,Network Setup,2,25.70
+612,837,Troubleshooting,5,67.96
+613,407,Maintenance,5,59.32
+614,678,Product Customization,4,47.31
+615,308,Remote Assistance,5,65.30
+616,472,Emergency Response,4,55.46
+617,387,Customer Service,5,61.38
+618,976,Repair,3,38.27
+619,404,Software Development,1,11.28
+620,888,Technical Support,4,49.68
+621,545,Remote Assistance,1,18.14
+622,525,Customer Service,3,41.82
+623,86,Maintenance,4,53.25
+624,182,Data Migration,4,44.89
+625,725,Product Customization,5,56.82
+626,661,Network Setup,5,63.81
+627,998,Training,3,38.17
+628,730,Consulting,6,70.69
+629,108,Upgrade,4,55.39
+630,432,Software Development,3,33.03
+631,159,Installation,2,31.10
+632,199,System Integration,3,38.11
+633,419,Performance Optimization,4,55.19
+634,359,Repair,1,12.67
+635,274,Technical Support,3,36.60
+636,552,Warranty Service,4,49.84
+637,403,Security Assessment,4,51.75
+638,80,Troubleshooting,4,49.03
+639,142,Emergency Response,5,61.34
+640,977,On-site Service,3,40.47
+641,64,Maintenance,4,55.07
+642,111,On-site Service,3,40.90
+643,276,Data Migration,3,33.79
+644,471,Product Customization,4,51.36
+645,897,Training,6,74.07
+646,980,Security Assessment,6,73.51
+647,170,Network Setup,5,66.77
+648,23,Upgrade,2,29.08
+649,97,System Integration,2,29.83
+650,532,Repair,2,30.47
+651,258,Customer Service,5,64.05
+652,820,Technical Support,3,31.84
+653,750,Warranty Service,6,70.49
+654,685,Troubleshooting,6,69.17
+655,754,Installation,3,39.08
+656,840,Remote Assistance,6,72.48
+657,904,Performance Optimization,5,68.42
+658,213,Consulting,3,34.00
+659,973,Emergency Response,4,49.56
+660,374,Software Development,3,36.05
+661,835,Emergency Response,2,26.78
+662,893,Security Assessment,5,57.60
+663,896,Maintenance,3,43.26
+664,337,On-site Service,5,58.53
+665,668,Technical Support,3,41.32
+666,597,Product Customization,3,36.30
+667,595,Remote Assistance,6,74.29
+668,554,Network Setup,3,35.13
+669,299,Consulting,4,49.63
+670,198,Repair,6,72.63
+671,983,Installation,5,59.00
+672,94,Training,3,35.52
+673,335,Software Development,3,43.69
+674,178,System Integration,3,41.68
+675,310,Troubleshooting,4,52.96
+676,460,Customer Service,1,10.40
+677,284,Performance Optimization,4,52.63
+678,401,Upgrade,3,33.84
+679,987,Data Migration,3,43.66
+680,553,Warranty Service,3,43.27
+681,974,Repair,5,68.12
+682,847,Installation,1,14.17
+683,425,Training,3,39.98
+684,951,Software Development,3,37.09
+685,853,System Integration,4,51.40
+686,110,Troubleshooting,4,48.08
+687,330,Customer Service,4,47.21
+688,267,Performance Optimization,4,52.20
+689,618,Upgrade,2,23.93
+690,796,Data Migration,5,59.95
+691,263,Warranty Service,3,34.50
+692,52,Emergency Response,5,63.25
+693,851,Security Assessment,2,29.28
+694,821,Maintenance,3,37.97
+695,253,On-site Service,1,13.53
+696,486,Technical Support,5,60.62
+697,28,Product Customization,4,48.63
+698,929,Remote Assistance,3,43.03
+699,640,Network Setup,5,68.54
+700,622,Consulting,3,42.52
+701,566,Network Setup,6,72.02
+702,14,Performance Optimization,4,56.05
+703,296,Consulting,4,48.49
+704,562,Troubleshooting,3,35.25
+705,365,Software Development,3,41.22
+706,5,Remote Assistance,1,17.52
+707,625,Customer Service,4,48.36
+708,583,On-site Service,4,44.06
+709,74,Warranty Service,6,76.81
+710,290,Upgrade,5,64.29
+711,963,Product Customization,5,67.62
+712,609,Security Assessment,4,52.95
+713,372,Emergency Response,4,46.07
+714,1,Installation,5,62.07
+715,616,System Integration,5,60.66
+716,676,Training,6,70.57
+717,949,Repair,3,35.38
+718,657,Maintenance,4,47.66
+719,898,Technical Support,4,48.94
+720,433,Data Migration,3,41.99
+721,506,Security Assessment,7,90.02
+722,424,Technical Support,5,59.61
+723,36,Remote Assistance,3,42.99
+724,954,Troubleshooting,8,96.86
+725,831,Training,5,57.64
+726,54,On-site Service,5,60.90
+727,718,Performance Optimization,5,59.26
+728,483,Maintenance,5,64.41
+729,336,Product Customization,5,58.62
+730,269,Customer Service,4,55.87
+731,136,Installation,5,56.46
+732,351,Network Setup,3,38.75
+733,124,Emergency Response,2,26.75
+734,279,Repair,4,51.45
+735,83,Upgrade,5,67.67
+736,121,Software Development,4,49.22
+737,733,Data Migration,3,33.21
+738,924,System Integration,6,79.09
+739,607,Warranty Service,4,44.35
+740,557,Consulting,4,49.25
+741,766,Remote Assistance,7,82.94
+742,17,Consulting,4,53.59
+743,7,Upgrade,4,54.99
+744,464,Data Migration,5,64.63
+745,193,Performance Optimization,4,45.51
+746,779,Software Development,3,42.96
+747,313,Product Customization,4,56.23
+748,484,Security Assessment,3,38.79
+749,340,System Integration,4,54.32
+750,673,Troubleshooting,4,44.99
+751,548,Network Setup,4,45.31
+752,739,Repair,3,36.86
+753,456,On-site Service,4,48.55
+754,350,Warranty Service,4,52.77
+755,417,Training,6,75.53
+756,789,Emergency Response,5,64.22
+757,153,Customer Service,4,51.69
+758,778,Maintenance,3,42.11
+759,667,Installation,3,39.32
+760,314,Technical Support,5,61.23
+761,75,Remote Assistance,3,33.82
+762,265,Customer Service,6,73.53
+763,543,On-site Service,3,34.70
+764,339,Warranty Service,6,68.96
+765,551,Upgrade,5,57.45
+766,247,Product Customization,3,40.14
+767,644,Security Assessment,4,43.86
+768,229,Emergency Response,3,41.86
+769,215,Installation,4,50.43
+770,250,System Integration,4,51.48
+771,319,Training,3,40.20
+772,659,Repair,6,72.06
+773,632,Maintenance,5,67.43
+774,932,Technical Support,3,37.48
+775,512,Data Migration,3,35.95
+776,719,Network Setup,5,61.04
+777,128,Performance Optimization,3,32.48
+778,638,Consulting,3,37.79
+779,98,Troubleshooting,1,10.00
+780,53,Software Development,4,50.79
+781,385,Performance Optimization,3,40.63
+782,845,Installation,4,45.86
+783,716,Warranty Service,2,28.79
+784,807,Security Assessment,3,37.00
+785,931,Data Migration,5,64.14
+786,9,Network Setup,6,73.81
+787,341,Troubleshooting,7,82.51
+788,38,Maintenance,5,65.48
+789,773,Product Customization,3,42.77
+790,394,Remote Assistance,2,29.23
+791,466,Emergency Response,6,70.99
+792,235,Customer Service,3,35.59
+793,99,Repair,3,41.18
+794,482,Software Development,3,34.72
+795,51,Technical Support,3,36.64
+796,389,System Integration,4,52.06
+797,179,Training,7,84.76
+798,641,Upgrade,6,77.66
+799,135,Consulting,2,22.87
+800,777,On-site Service,3,33.97
+801,868,On-site Service,5,65.79
+802,867,Network Setup,5,58.76
+803,349,Maintenance,2,23.56
+804,354,Warranty Service,7,84.59
+805,675,Upgrade,5,66.39
+806,686,Consulting,4,54.98
+807,48,Software Development,5,67.34
+808,517,Data Migration,4,52.35
+809,331,Remote Assistance,5,65.88
+810,850,Training,5,58.75
+811,642,Customer Service,4,44.25
+812,721,Repair,3,38.04
+813,734,Security Assessment,4,53.40
+814,569,Technical Support,5,57.41
+815,26,Product Customization,4,52.82
+816,823,Performance Optimization,4,47.32
+817,611,Troubleshooting,2,19.79
+818,206,Installation,5,59.13
+819,384,System Integration,3,35.56
+820,67,Emergency Response,4,48.66
+821,109,Technical Support,2,18.98
+822,469,Data Migration,3,40.14
+823,934,System Integration,5,61.75
+824,72,Network Setup,3,41.54
+825,315,Customer Service,4,51.64
+826,209,Maintenance,2,24.72
+827,168,Consulting,4,53.34
+828,810,Installation,2,26.38
+829,755,Warranty Service,3,39.96
+830,402,Software Development,5,67.26
+831,684,Remote Assistance,4,52.93
+832,185,Security Assessment,4,49.56
+833,985,Training,3,40.87
+834,975,Upgrade,5,58.68
+835,15,Product Customization,4,52.14
+836,147,Performance Optimization,6,73.20
+837,591,Emergency Response,4,54.50
+838,806,Troubleshooting,5,67.35
+839,819,Repair,5,64.31
+840,578,On-site Service,7,87.60
+841,208,Data Migration,3,42.06
+842,781,Training,4,45.73
+843,689,Software Development,3,35.70
+844,311,Network Setup,2,24.29
+845,501,Customer Service,3,33.93
+846,737,Upgrade,6,78.10
+847,305,Installation,4,54.96
+848,187,Technical Support,6,78.39
+849,127,Remote Assistance,0,10.00
+850,481,Warranty Service,2,27.89
+851,377,Performance Optimization,3,43.49
+852,830,Emergency Response,3,39.73
+853,809,Security Assessment,4,44.50
+854,626,On-site Service,3,41.46
+855,496,System Integration,4,46.58
+856,713,Consulting,3,33.37
+857,572,Maintenance,6,70.48
+858,218,Product Customization,3,41.86
+859,540,Repair,3,31.68
+860,656,Troubleshooting,3,34.77
+861,884,Warranty Service,4,46.98
+862,332,Customer Service,3,32.44
+863,434,Software Development,3,35.29
+864,224,Technical Support,4,55.22
+865,579,System Integration,4,51.66
+866,95,Product Customization,3,36.68
+867,515,Consulting,4,54.60
+868,411,Emergency Response,3,35.72
+869,413,Troubleshooting,3,42.03
+870,900,Upgrade,3,42.02
+871,926,On-site Service,6,79.42
+872,82,Performance Optimization,4,55.61
+873,736,Security Assessment,6,74.31
+874,84,Data Migration,3,38.89
+875,608,Training,3,35.94
+876,306,Installation,1,13.80
+877,210,Network Setup,3,39.85
+878,914,Maintenance,4,51.07
+879,596,Remote Assistance,1,18.55
+880,188,Repair,4,51.19
+881,539,Consulting,2,25.46
+882,379,Upgrade,4,49.64
+883,8,Technical Support,5,57.30
+884,536,Remote Assistance,4,48.45
+885,996,Network Setup,5,58.87
+886,326,Performance Optimization,3,39.88
+887,812,Repair,4,50.80
+888,458,Security Assessment,5,64.55
+889,814,Software Development,5,64.90
+890,27,On-site Service,5,64.96
+891,691,Warranty Service,3,39.87
+892,428,Customer Service,4,48.53
+893,345,Installation,5,58.57
+894,587,Product Customization,5,62.34
+895,105,Troubleshooting,4,44.86
+896,905,Data Migration,7,92.68
+897,918,Emergency Response,3,33.77
+898,948,Training,3,38.77
+899,316,Maintenance,5,56.73
+900,712,System Integration,6,76.05
+901,524,Installation,3,37.25
+902,390,System Integration,6,70.82
+903,690,Emergency Response,4,56.11
+904,747,On-site Service,5,62.75
+905,995,Network Setup,3,41.46
+906,613,Maintenance,3,33.38
+907,333,Warranty Service,5,59.62
+908,966,Upgrade,5,57.72
+909,148,Consulting,4,49.67
+910,338,Software Development,4,43.95
+911,906,Data Migration,3,35.42
+912,504,Remote Assistance,2,29.62
+913,30,Training,3,38.71
+914,693,Customer Service,2,19.30
+915,741,Repair,4,44.94
+916,817,Security Assessment,2,30.46
+917,165,Technical Support,1,14.89
+918,664,Product Customization,5,68.63
+919,323,Performance Optimization,2,29.15
+920,259,Troubleshooting,3,40.27
+921,334,Upgrade,5,58.25
+922,154,System Integration,3,32.11
+923,759,Customer Service,3,42.12
+924,925,On-site Service,6,80.63
+925,803,Product Customization,5,60.02
+926,497,Consulting,4,46.63
+927,648,Security Assessment,5,59.95
+928,631,Installation,5,61.13
+929,476,Performance Optimization,4,44.67
+930,865,Training,6,77.26
+931,962,Emergency Response,5,56.56
+932,133,Repair,3,38.45
+933,994,Maintenance,3,39.65
+934,33,Data Migration,6,76.75
+935,327,Warranty Service,5,59.98
+936,547,Troubleshooting,3,36.52
+937,195,Technical Support,2,30.34
+938,804,Network Setup,4,47.80
+939,872,Software Development,4,49.64
+940,522,Remote Assistance,5,58.14
+941,197,Remote Assistance,4,54.48
+942,502,Consulting,2,29.15
+943,66,Repair,3,40.78
+944,919,Software Development,2,29.32
+945,589,Installation,3,31.88
+946,19,On-site Service,5,63.69
+947,795,System Integration,5,58.52
+948,405,Product Customization,4,47.92
+949,792,Warranty Service,5,56.42
+950,571,Training,5,68.53
+951,825,Troubleshooting,3,40.02
+952,116,Maintenance,3,36.05
+953,855,Performance Optimization,4,44.58
+954,217,Upgrade,3,36.76
+955,864,Customer Service,4,45.98
+956,223,Data Migration,5,56.94
+957,201,Emergency Response,4,45.85
+958,479,Technical Support,3,39.74
+959,357,Network Setup,4,50.84
+960,238,Security Assessment,3,43.40
+961,839,System Integration,8,94.65
+962,811,Repair,5,68.23
+963,367,Customer Service,3,41.46
+964,722,Technical Support,2,19.29
+965,672,Warranty Service,5,58.46
+966,637,Troubleshooting,4,49.70
+967,968,Installation,6,76.23
+968,228,Remote Assistance,3,42.96
+969,630,Performance Optimization,4,55.62
+970,370,Consulting,6,69.32
+971,226,Emergency Response,5,61.54
+972,396,Software Development,4,50.63
+973,427,Maintenance,3,39.56
+974,393,On-site Service,5,60.41
+975,708,Data Migration,3,40.73
+976,858,Product Customization,3,33.83
+977,606,Training,2,20.97
+978,40,Security Assessment,2,22.21
+979,647,Network Setup,5,57.34
+980,764,Upgrade,5,67.36
+981,88,System Integration,6,80.86
+982,368,Warranty Service,5,65.68
+983,418,Consulting,4,49.28
+984,698,Security Assessment,4,50.07
+985,101,Technical Support,4,45.71
+986,534,Remote Assistance,6,74.75
+987,205,Troubleshooting,2,23.37
+988,243,Training,4,50.54
+989,137,On-site Service,2,21.07
+990,824,Performance Optimization,3,31.98
+991,453,Maintenance,3,32.57
+992,355,Product Customization,5,62.49
+993,353,Customer Service,6,80.80
+994,878,Installation,3,36.83
+995,409,Network Setup,3,40.61
+996,874,Emergency Response,4,49.84
+997,771,Repair,4,50.64
+998,169,Upgrade,5,60.68
+999,25,Software Development,5,62.31
+1000,912,Data Migration,5,58.23

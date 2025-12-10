@@ -1,32 +1,28 @@
-// =========================
-// Configuration
-// =========================
-const BACKEND_URL = "http://127.0.0.1:5000";
+import { BACKEND_URL, safeFetchCurrentUser } from "/Frontend/shared.js";
 
+// =========================
+// Initialization
+// =========================
 document.addEventListener("DOMContentLoaded", async () => {
   const navbarContainer = document.getElementById("navbar");
   if (navbarContainer) await loadNavbar(navbarContainer);
 
   const loginForm = document.getElementById("loginForm");
-
-  // Try to fetch the currently logged-in user
   const user = await safeFetchCurrentUser();
-  console.log("Current user:", user); // Debug log
   
   handlePageProtection(user);
   updateNavbarState(user);
 
-  // Handle login form submission
   if (loginForm) {
-    loginForm.addEventListener("submit", async (e) => {
+    loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      await handleLogin();
+      handleLogin();
     });
   }
 });
 
 // =========================
-// Navbar Loader
+// Navbar
 // =========================
 async function loadNavbar(container) {
   try {
@@ -40,22 +36,19 @@ async function loadNavbar(container) {
     if (loginBtn) loginBtn.addEventListener("click", () => (window.location.href = "/Frontend/login.html"));
     if (logoutBtn) logoutBtn.addEventListener("click", handleLogout);
   } catch (err) {
-    logError("loadNavbar", err);
+    console.error("Error loading navbar:", err);
   }
 }
 
 // =========================
-// Login
+// Auth Actions
 // =========================
 async function handleLogin() {
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value.trim();
   const role = document.getElementById("role").value;
 
-  if (!role) {
-    alert("Please select a role before logging in.");
-    return;
-  }
+  if (!role) return alert("Please select a role.");
 
   try {
     const response = await fetch(`${BACKEND_URL}/api/auth/login`, {
@@ -65,152 +58,89 @@ async function handleLogin() {
       credentials: "include"
     });
 
-    const data = await response.json().catch(() => ({}));
-    
-    if (!response.ok) {
-      const reason = data.error || `HTTP ${response.status}`;
-      throw new Error(`Login failed: ${reason}`);
-    }
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || "Login failed");
 
-    // Session is stored server-side, no need for localStorage
-    alert(`Logged in successfully as ${role}: ${username}`);
-
-    // Redirect based on role
+    alert(`Logged in as ${role}: ${username}`);
     if (role === "employee") {
       window.location.href = "/Frontend/employee/employee.html";
+    } else if (role === "manager") {
+      window.location.href = "/Frontend/manager/manager.html";
     } else {
       window.location.href = "/Frontend/customer/customer.html";
     }
   } catch (err) {
-    logError("handleLogin", err);
-    alert("Login failed. Please check your credentials or try again later.");
+    console.error(err);
+    alert(err.message);
   }
 }
 
-// =========================
-// Logout
-// =========================
 async function handleLogout() {
   try {
-    const response = await fetch(`${BACKEND_URL}/api/auth/logout`, {
-      method: "POST",
-      credentials: "include"
-    });
-
-    if (!response.ok) throw new Error(`Logout failed: HTTP ${response.status}`);
-
+    await fetch(`${BACKEND_URL}/api/auth/logout`, { method: "POST", credentials: "include" });
     alert("Logged out successfully!");
     window.location.href = "/Frontend/index.html";
   } catch (err) {
-    logError("handleLogout", err);
-    alert("An issue occurred while logging out. You may need to clear your cookies manually.");
+    console.error(err);
+    alert("Error logging out.");
   }
 }
 
 // =========================
-// Current User
-// =========================
-async function safeFetchCurrentUser() {
-  try {
-    const response = await fetch(`${BACKEND_URL}/api/auth/current_user`, {
-      method: "GET",
-      credentials: "include"
-    });
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch current user: HTTP ${response.status}`);
-    }
-
-    const data = await response.json();
-    
-    // Handle both formats: {user: {...}} or {...}
-    // Return null if user is explicitly null or undefined
-    if (data.user !== undefined) {
-      return data.user; // Backend wraps in {user: ...}
-    }
-    
-    // If data has username property, it's the user object itself
-    if (data.username) {
-      return data;
-    }
-    
-    return null;
-  } catch (err) {
-    logError("safeFetchCurrentUser", err);
-    return null;
-  }
-}
-
-// =========================
-// Navbar State Update
+// UI State
 // =========================
 function updateNavbarState(user) {
   const loginBtn = document.getElementById("loginBtn");
   const logoutBtn = document.getElementById("logoutBtn");
   const userGreeting = document.getElementById("userGreeting");
-  const navLeft = document.querySelector(".nav-left");
+  const navLeft = document.getElementById("nav-left");
 
   if (!navLeft) return;
 
-  // Always show home link
-  navLeft.innerHTML = `
-    <a href="/Frontend/index.html" class="logo">AutoBase</a>
-    <a href="/Frontend/index.html">Home</a>
-  `;
+  // base logo/link
+  navLeft.innerHTML = `<a href="/Frontend/index.html" class="logo">AutoBase</a>`;
 
   if (user && user.username) {
-    // User is logged in
     if (loginBtn) loginBtn.style.display = "none";
     if (logoutBtn) logoutBtn.style.display = "inline-block";
     if (userGreeting) userGreeting.textContent = `👋 ${user.username} (${user.user_type})`;
 
-    // Add role-specific nav links
     if (user.user_type === "employee") {
       navLeft.innerHTML += `
-        <a href="/Frontend/employee/employee.html">Dashboard</a>
-        <a href="#">Reports</a>
+        <a href="/Frontend/employee/sales_orders/sales_orders.html">Sales Orders</a>
+        <a href="/Frontend/my_sales_orders.html">Current Sales Orders</a>
+        <a href="/Frontend/employee/tools.html">Employee Tools</a>
       `;
     } else if (user.user_type === "customer") {
       navLeft.innerHTML += `
         <a href="/Frontend/customer/customer.html">My Account</a>
-        <a href="/Frontend/vehicles/vehicles.html">Vehicles</a>
+        <a href="/Frontend/customer/vehicles/vehicles.html">Vehicles</a>
+        <a href="/Frontend/my_sales_orders.html">Current Sales Orders</a>
+      `;
+    } else if (user.user_type === "manager") {
+      navLeft.innerHTML += `
+        <a href="/Frontend/manager/manager.html">Manager Dashboard</a>
+        <a href="/Frontend/employee/sales_orders/sales_orders.html">Sales Orders</a>
+        <a href="/Frontend/employee/tools.html">Employee Tools</a>
       `;
     }
   } else {
-    // User is not logged in
     if (loginBtn) loginBtn.style.display = "inline-block";
     if (logoutBtn) logoutBtn.style.display = "none";
-    if (userGreeting) userGreeting.textContent = "";
   }
+
+  // always show available vehicles
+  navLeft.innerHTML += `<a href="/Frontend/available_vehicles.html">Available Vehicles</a>`;
 }
 
-// =========================
-// Page Protection
-// =========================
 function handlePageProtection(user) {
-  const path = window.location.pathname.split("/").pop();
-
-  // Protect employee page
-  if (path === "/Frontend/employee/employee.html" && (!user || user.user_type !== "employee")) {
-    alert("Unauthorized access. Employee accounts only.");
+  const path = window.location.pathname;
+  if (path.includes("/employee/") && (!user || (user.user_type !== "employee" && user.user_type !== "manager"))) {
+    alert("Unauthorized access.");
     window.location.href = "/Frontend/login.html";
-    return;
   }
-  
-  // Protect customer page
-  if (path === "/Frontend/customer/customer.html" && (!user || user.user_type !== "customer")) {
-    alert("Unauthorized access. Customer accounts only.");
+  if (path.includes("/customer/") && (!user || user.user_type !== "customer")) {
+    alert("Unauthorized access.");
     window.location.href = "/Frontend/login.html";
-    return;
   }
-}
-
-// =========================
-// Centralized Error Logger
-// =========================
-function logError(context, error) {
-  console.group(`Error in ${context}`); // Fixed: was using single quotes instead of backticks
-  console.error("Message:", error.message || error);
-  if (error.stack) console.error("Stack:", error.stack);
-  console.groupEnd();
 }
