@@ -120,6 +120,7 @@ function updateNavbarState(user) {
     } else if (user.user_type === "manager") {
       navLeft.innerHTML += `
         <a href="/Frontend/manager/manager.html">Manager Dashboard</a>
+        <a href="/Frontend/employee/sales_orders/sales_orders.html">Sales Orders</a>
         <a href="/Frontend/employee/tools.html">Employee Tools</a>
       `;
     }

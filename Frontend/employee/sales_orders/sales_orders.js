@@ -19,8 +19,9 @@ let selectedOrderId = null;
 document.addEventListener("DOMContentLoaded", async () => {
   const user = await safeFetchCurrentUser();
   
-  if (!user || user.user_type !== "employee") {
-    alert("Unauthorized access. Employee accounts only.");
+  // Allow both employee and manager access
+  if (!user || (user.user_type !== "employee" && user.user_type !== "manager")) {
+    alert("Unauthorized access. Employee or Manager accounts only.");
     window.location.href = "/Frontend/login.html";
     return;
   }
@@ -116,25 +117,29 @@ function displayOrdersTable(orders, container) {
     // Resolve Customer Name
     const customerName = order.Customer_Name || `Customer #${order.Customer_ID}`;
     
-    // Resolve Employee Name from global list
+    // Resolve Employee Name
     let employeeName = "Not Assigned";
     if (order.Sales_Employee_ID) {
-      const matchedEmp = allEmployees.find(e => e.ID == order.Sales_Employee_ID);
-      if (matchedEmp) {
-        const fName = matchedEmp.First_Name || matchedEmp.first_name || "";
-        const lName = matchedEmp.Last_Name || matchedEmp.last_name || "";
-        employeeName = matchedEmp.Name || matchedEmp.name || `${fName} ${lName}`.trim();
+      // First try Sales_Employee_Name from the query
+      if (order.Sales_Employee_Name) {
+        employeeName = order.Sales_Employee_Name;
       } else {
-        employeeName = `Employee #${order.Sales_Employee_ID}`;
+        // Fallback to matching from employee list
+        const matchedEmp = allEmployees.find(e => e.ID == order.Sales_Employee_ID);
+        if (matchedEmp) {
+          employeeName = matchedEmp.Name || matchedEmp.name || `Employee #${order.Sales_Employee_ID}`;
+        } else {
+          employeeName = `Employee #${order.Sales_Employee_ID}`;
+        }
       }
     }
 
     // Use .btn-primary from style.css, add 'assignBtn' for event targeting
     html += `
       <tr>
-        <td>${escapeHtml(order.ID)}</td>
+        <td>${escapeHtml(String(order.ID))}</td>
         <td>${escapeHtml(customerName)}</td>
-        <td>${escapeHtml(order.vehicle_info || order.Vehicle_VIN)}</td>
+        <td>${escapeHtml(order.Vehicle_VIN)}</td>
         <td>${formatDate(order.Sales_Date)}</td>
         <td>${escapeHtml(employeeName)}</td>
         <td>${formatCurrency(order.Price)}</td>
