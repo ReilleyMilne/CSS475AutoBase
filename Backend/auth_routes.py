@@ -19,7 +19,7 @@ def login():
         return jsonify({'error': 'Missing required fields'}), 400
 
     # Validate user_type
-    if user_type not in ['employee', 'customer']:
+    if user_type not in ['employee', 'customer', 'manager']:
         return jsonify({'error': 'Invalid user type'}), 400
 
     conn = get_db_connection()
@@ -27,7 +27,8 @@ def login():
 
     try:
         # Query the appropriate table based on user type
-        if user_type == 'employee':
+        # Managers are stored in EmployeeAuth but must be verified as managers
+        if user_type in ('employee', 'manager'):
             cursor.execute("SELECT * FROM EmployeeAuth WHERE Username = %s", (username,))
             id_field = 'Employee_ID'
         else:
@@ -44,6 +45,30 @@ def login():
                 'user_type': user_type,
                 'id': user[id_field]
             }
+            # If logging in as manager, verify the employee is actually a manager
+            if user_type == 'manager':
+                # Per project rules: if Employee.Mgr_ID is NULL then they are a manager
+                conn2 = get_db_connection()
+                cursor2 = conn2.cursor(dictionary=True)
+                try:
+                    cursor2.execute(
+                        "SELECT Mgr_ID FROM Employee WHERE ID = %s",
+                        (user[id_field],)
+                    )
+                    row = cursor2.fetchone()
+                    if not row:
+                        cursor2.close()
+                        conn2.close()
+                        return jsonify({'error': 'Manager record not found'}), 401
+
+                    mgr_id = row.get('Mgr_ID')
+                    is_manager = mgr_id is None
+                finally:
+                    cursor2.close()
+                    conn2.close()
+
+                if not is_manager:
+                    return jsonify({'error': 'Not authorized as manager'}), 401
             
             # Store in session
             session.permanent = False

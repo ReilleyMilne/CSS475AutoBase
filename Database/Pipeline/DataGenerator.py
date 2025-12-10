@@ -33,9 +33,24 @@ class DataGenerator:
         headers = next(reader)
         
         for row in reader:
-            row_escaped = [val.replace("'", "''") for val in row]
-            values = ", ".join(f"'{val}'" for val in row_escaped)
+            fixed_values = []
+            for val in row:
+                val = val.strip()
+                if val == "" or val.upper() == "NULL":
+                    fixed_values.append("NULL")
+                else:
+                    # Remove semicolons
+                    val = val.replace(";", "")
+                    # Remove wrapping single quotes if present
+                    if val.startswith("'") and val.endswith("'"):
+                        val = val[1:-1]
+                    # Escape internal single quotes
+                    escaped = val.replace("'", "''")
+                    fixed_values.append(f"'{escaped}'")
+            
+            values = ", ".join(fixed_values)
             sql_lines.append(f"INSERT INTO `{table_name}` ({', '.join(headers)}) VALUES ({values});")
+
         
         sql_data = "\n".join(sql_lines)
         return sql_data

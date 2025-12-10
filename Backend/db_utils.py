@@ -141,7 +141,10 @@ def execute_query(query, params=None, fetch_one=False):
             cursor.execute(query, params)
         else:
             cursor.execute(query)
-        
+            
+        if query.strip().upper().startswith(("INSERT", "UPDATE", "DELETE")):
+            conn.commit()
+
         if fetch_one:
             result = cursor.fetchone()
         else:
@@ -151,6 +154,7 @@ def execute_query(query, params=None, fetch_one=False):
         conn.close()
         
         return result
+
         
     except Exception as e:
         print(f"Error executing query: {str(e)}")
