@@ -86,7 +86,7 @@
 .controls-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  gap: 2rem;
   margin-bottom: 2rem;
   align-items: end;
 }
@@ -309,6 +309,152 @@
   .full-width-table th,
   .full-width-table td {
     padding: 0.75rem 0.5rem;
+  }
+}
+
+/* Parts Management Styling */
+.parts-management-section,
+.parts-inventory-section,
+.parts-usage-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f9f7ff;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+}
+
+.parts-management-section h3,
+.parts-inventory-section h3,
+.parts-usage-section h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.inventory-table-container {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.parts-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.parts-table thead {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+}
+
+.parts-table th {
+  padding: 1rem;
+  text-align: left;
+  border: none;
+}
+
+.parts-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #e0d7f0;
+}
+
+.parts-table tbody tr:hover {
+  background: #f9f7ff;
+}
+
+.parts-table .low-stock-row {
+  background: #fff3cd;
+}
+
+.parts-table .low-stock-row:hover {
+  background: #ffe69c;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-small {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-edit {
+  background: #007bff;
+  color: white;
+}
+
+.btn-edit:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  background: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #f5c6cb;
+  margin: 1rem 0;
+}
+
+.empty-message {
+  background: #e7f3ff;
+  color: #0c5aa0;
+  padding: 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid #b3d9ff;
+}
+
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .btn-small {
+    width: 100%;
+  }
+  
+  .controls-grid {
+    grid-template-columns: 1fr;
   }
 }
 

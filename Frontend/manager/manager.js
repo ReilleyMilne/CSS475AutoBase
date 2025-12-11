@@ -7,6 +7,53 @@ async function apiGet(path){
   return res.json();
 }
 
+async function apiPost(path, body){
+  const url = path.startsWith('http') ? path : (BACKEND_URL + path);
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    credentials: 'include',
+    body: JSON.stringify(body)
+  });
+  if(!res.ok) throw new Error('API error '+res.status);
+  return res.json();
+}
+
+async function apiPut(path, body){
+  const url = path.startsWith('http') ? path : (BACKEND_URL + path);
+  const res = await fetch(url, {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json'},
+    credentials: 'include',
+    body: JSON.stringify(body)
+  });
+  if(!res.ok) throw new Error('API error '+res.status);
+  return res.json();
+}
+
+async function apiDelete(path){
+  const url = path.startsWith('http') ? path : (BACKEND_URL + path);
+  const res = await fetch(url, {
+    method: 'DELETE',
+    credentials: 'include'
+  });
+  
+  if(!res.ok) {
+    // Try to get the error message from the response body
+    let errorMessage = `API error ${res.status}`;
+    try {
+      const errorData = await res.json();
+      errorMessage = errorData.error || errorData.message || errorMessage;
+    } catch {
+      // If response isn't JSON, use the default message
+    }
+    throw new Error(errorMessage);
+  }
+  
+  return res.json();
+}
+
+
 // ============================================
 // Tab Management
 // ============================================
@@ -158,6 +205,86 @@ function renderFullTable(containerId, items, columns){
 }
 
 // ============================================
+// Parts Table with Actions
+// ============================================
+function renderPartsTable(containerId, items){
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  
+  if(!items || items.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'empty-message';
+    empty.textContent = 'No parts available';
+    container.appendChild(empty);
+    return;
+  }
+  
+  const table = document.createElement('table');
+  table.className = 'full-width-table';
+  
+  const thead = document.createElement('thead');
+  const headerRow = document.createElement('tr');
+  ['ID', 'Name', 'Price', 'Stock', 'Times Used', 'Actions'].forEach(col => {
+    const th = document.createElement('th');
+    th.textContent = col;
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+  
+  const tbody = document.createElement('tbody');
+  items.forEach(item => {
+    const tr = document.createElement('tr');
+    
+    // ID
+    const tdId = document.createElement('td');
+    tdId.textContent = item.ID || item.id || '';
+    tr.appendChild(tdId);
+    
+    // Name
+    const tdName = document.createElement('td');
+    tdName.textContent = item.Name || item.name || '';
+    tr.appendChild(tdName);
+    
+    // Price
+    const tdPrice = document.createElement('td');
+    tdPrice.textContent = formatCurrency(item.Price || item.price || 0);
+    tr.appendChild(tdPrice);
+    
+    // Stock
+    const tdStock = document.createElement('td');
+    tdStock.textContent = item.Stock || item.stock || 0;
+    tr.appendChild(tdStock);
+    
+    // Times Used
+    const tdUsed = document.createElement('td');
+    tdUsed.textContent = item.times_used || 0;
+    tr.appendChild(tdUsed);
+    
+    // Actions
+    const tdActions = document.createElement('td');
+    const editBtn = document.createElement('button');
+    editBtn.textContent = 'Edit';
+    editBtn.className = 'btn-secondary';
+    editBtn.style.marginRight = '0.5rem';
+    editBtn.onclick = () => openEditPartModal(item);
+    
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.className = 'btn-danger';
+    deleteBtn.onclick = () => deletePart(item.ID || item.id);
+    
+    tdActions.appendChild(editBtn);
+    tdActions.appendChild(deleteBtn);
+    tr.appendChild(tdActions);
+    
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  container.appendChild(table);
+}
+
+// ============================================
 // Utility Functions
 // ============================================
 function parseDateSafe(s){
@@ -274,15 +401,72 @@ async function refreshService(){
 // Parts Functions
 // ============================================
 async function refreshParts(){
-  const threshold = document.getElementById('partsThreshold').value;
-  
   try{
-    const data = await apiGet('/api/manager/parts/usage?threshold=' + encodeURIComponent(threshold));
+    const data = await apiGet('/api/manager/parts/usage');
     const items = data.data || data || [];
-    renderGrid('partsResults', items, ['Name','Stock','times_used','Price']);
+    renderPartsTable('partsResults', items);
   } catch(e) {
     console.error(e);
     document.getElementById('partsResults').innerHTML = '<div class="empty-message">Error loading parts data</div>';
+  }
+}
+
+function openAddPartModal(){
+  document.getElementById('partModalTitle').textContent = 'Add New Part';
+  document.getElementById('partForm').reset();
+  document.getElementById('partId').value = '';
+  document.getElementById('partModal').style.display = 'block';
+}
+
+function openEditPartModal(part){
+  document.getElementById('partModalTitle').textContent = 'Edit Part';
+  document.getElementById('partId').value = part.ID || part.id;
+  document.getElementById('partName').value = part.Name || part.name || '';
+  document.getElementById('partPrice').value = part.Price || part.price || 0;
+  document.getElementById('partStock').value = part.Stock || part.stock || 0;
+  document.getElementById('partModal').style.display = 'block';
+}
+
+function closePartModal(){
+  document.getElementById('partModal').style.display = 'none';
+}
+
+async function savePart(e){
+  e.preventDefault();
+  
+  const partId = document.getElementById('partId').value;
+  const name = document.getElementById('partName').value;
+  const price = parseFloat(document.getElementById('partPrice').value);
+  const stock = parseInt(document.getElementById('partStock').value);
+  
+  try{
+    if(partId){
+      // Update existing part
+      await apiPut(`/api/manager/parts/${partId}`, { name, price, stock });
+      alert('Part updated successfully');
+    } else {
+      // Create new part
+      await apiPost('/api/manager/parts', { name, price, stock });
+      alert('Part added successfully');
+    }
+    closePartModal();
+    refreshParts();
+  } catch(e) {
+    console.error(e);
+    alert('Error saving part: ' + e.message);
+  }
+}
+
+async function deletePart(partId){
+  if(!confirm('Are you sure you want to delete this part?')) return;
+  
+  try{
+    await apiDelete(`/api/manager/parts/${partId}`);
+    alert('Part deleted successfully');
+    refreshParts();
+  } catch(e) {
+    console.error(e);
+    alert('Error deleting part: ' + e.message);
   }
 }
 
@@ -329,7 +513,7 @@ async function runEmployeePerformance(){
     const data = await apiGet('/api/manager/reports/employee-performance');
     const items = data.data || data || [];
     renderFullTable('employeePerformanceResults', items,
-      ['Employee ID', 'Employee Name', 'Vehicle Sold', 'Core Customer']
+      ['Employee ID', 'Employee Name', 'Vehicle Sold', 'Seattle Customer']
     );
   } catch(e) {
     console.error(e);
@@ -354,6 +538,19 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('runCustomerReport').addEventListener('click', runCustomerReport);
   document.getElementById('runWaitingVehicles').addEventListener('click', runWaitingVehicles);
   document.getElementById('runEmployeePerformance').addEventListener('click', runEmployeePerformance);
+  
+  // Parts modal event listeners
+  document.getElementById('addPartBtn').addEventListener('click', openAddPartModal);
+  document.getElementById('partForm').addEventListener('submit', savePart);
+  document.getElementById('cancelPartBtn').addEventListener('click', closePartModal);
+  document.querySelector('#partModal .close').addEventListener('click', closePartModal);
+  
+  // Close modal when clicking outside
+  window.addEventListener('click', (e) => {
+    if(e.target === document.getElementById('partModal')){
+      closePartModal();
+    }
+  });
   
   // Initial load for sales tab
   refreshSales();

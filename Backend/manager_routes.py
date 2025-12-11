@@ -111,18 +111,11 @@ def service_summary():
 
 @manager_bp.route('/parts/usage', methods=['GET'])
 def parts_usage():
-    """Return parts usage and stock info. Optional query param `threshold` to filter low stock."""
+    """Return all parts with usage and stock info."""
     if not _require_manager():
         return jsonify({'error': 'Unauthorized'}), 401
 
-    threshold = request.args.get('threshold')
     try:
-        if threshold is not None:
-            try:
-                threshold = int(threshold)
-            except ValueError:
-                threshold = None
-
         query = """
             SELECT 
                 p.ID, 
@@ -133,18 +126,136 @@ def parts_usage():
             FROM Part p
             LEFT JOIN ServiceLineUsePart slup ON p.ID = slup.Part_ID
             GROUP BY p.ID, p.Name, p.Price, p.Stock
-            ORDER BY times_used DESC
+            ORDER BY p.Name
         """
         res = execute_query(query)
-
-        if threshold is not None and res:
-            res = [r for r in res if r.get('Stock', 0) <= threshold]
-
         return jsonify({'data': res or []}), 200
 
     except Exception as e:
         print(f"Error in parts_usage: {str(e)}")
         return jsonify({'error': 'Failed to fetch parts usage'}), 500
+
+
+@manager_bp.route('/parts', methods=['POST'])
+def create_part():
+    """Create a new part."""
+    if not _require_manager():
+        return jsonify({'error': 'Unauthorized'}), 401
+
+    data = request.get_json()
+    name = data.get('name')
+    price = data.get('price')
+    stock = data.get('stock')
+
+    if not name or price is None or stock is None:
+        return jsonify({'error': 'Missing required fields'}), 400
+
+    try:
+        # Get the next available ID
+        id_query = "SELECT COALESCE(MAX(ID), 0) + 1 as next_id FROM Part"
+        id_result = execute_query(id_query)
+        next_id = id_result[0]['next_id'] if id_result else 1
+        
+        query = """
+            INSERT INTO Part (ID, Name, Price, Stock)
+            VALUES (%s, %s, %s, %s)
+        """
+        execute_query(query, (next_id, name, price, stock))
+        return jsonify({'message': 'Part created successfully', 'id': next_id}), 201
+
+    except Exception as e:
+        print(f"Error in create_part: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': 'Failed to create part'}), 500
+
+
+@manager_bp.route('/parts/<int:part_id>', methods=['PUT'])
+def update_part(part_id):
+    """Update an existing part."""
+    if not _require_manager():
+        return jsonify({'error': 'Unauthorized'}), 401
+
+    data = request.get_json()
+    name = data.get('name')
+    price = data.get('price')
+    stock = data.get('stock')
+
+    if not name or price is None or stock is None:
+        return jsonify({'error': 'Missing required fields'}), 400
+
+    try:
+        query = """
+            UPDATE Part 
+            SET Name = %s, Price = %s, Stock = %s
+            WHERE ID = %s
+        """
+        execute_query(query, (name, price, stock, part_id))
+        return jsonify({'message': 'Part updated successfully'}), 200
+
+    except Exception as e:
+        print(f"Error in update_part: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': 'Failed to update part'}), 500
+
+
+@manager_bp.route('/parts/<int:part_id>', methods=['DELETE'])
+def delete_part(part_id):
+    """Delete a part."""
+    if not _require_manager():
+        return jsonify({'error': 'Unauthorized'}), 401
+
+    try:
+        # First check if the part exists
+        part_check = "SELECT ID FROM Part WHERE ID = %s"
+        part_exists = execute_query(part_check, (part_id,))
+        
+        if not part_exists or len(part_exists) == 0:
+            return jsonify({'error': 'Part not found'}), 404
+
+        # Check if part is being used in any service orders
+        check_query = """
+            SELECT COUNT(*) as count
+            FROM ServiceLineUsePart
+            WHERE Part_ID = %s
+        """
+        result = execute_query(check_query, (part_id,))
+        
+        # Debug logging
+        print(f"Check query result: {result}")
+        print(f"Result type: {type(result)}")
+        
+        # Handle different possible return formats
+        usage_count = 0
+        if result:
+            if isinstance(result, list) and len(result) > 0:
+                usage_count = result[0].get('count', 0) or result[0].get('COUNT(*)', 0)
+            elif isinstance(result, dict):
+                usage_count = result.get('count', 0) or result.get('COUNT(*)', 0)
+        
+        print(f"Usage count: {usage_count}")
+        
+        if usage_count > 0:
+            return jsonify({
+                'error': 'Cannot delete part that is being used in service orders',
+                'usage_count': usage_count
+            }), 400
+
+        # Delete the part
+        query = "DELETE FROM Part WHERE ID = %s"
+        execute_query(query, (part_id,))
+        
+        return jsonify({'message': 'Part deleted successfully'}), 200
+
+    except Exception as e:
+        print(f"Error in delete_part: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            'error': 'Failed to delete part',
+            'details': str(e)
+        }), 500
 
 
 @manager_bp.route('/reports/customer-vehicles', methods=['GET'])

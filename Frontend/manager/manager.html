@@ -97,18 +97,51 @@
       <!-- Parts Tab -->
       <div id="parts-tab" class="tab-content">
         <section class="dashboard-section">
-          <h2>Parts Usage & Low Stock</h2>
+          <h2>Parts Inventory Management</h2>
+          <p class="section-description">Manage parts inventory and track usage</p>
+          
           <div class="controls-grid">
-            <div class="control-item">
-              <label for="partsThreshold">Low Stock Threshold</label>
-              <input id="partsThreshold" type="number" value="5" min="0" class="form-control">
+            <div class="control-item button-item">
+              <button id="addPartBtn" class="btn-primary">Add New Part</button>
             </div>
             <div class="control-item button-item">
-              <button id="refreshParts" class="btn-primary">Get Parts Usage</button>
+              <button id="refreshParts" class="btn-primary">Refresh Parts</button>
             </div>
           </div>
-          <div id="partsResults" class="results-grid"></div>
+          
+          <div id="partsResults" class="table-container"></div>
         </section>
+
+        <!-- Add/Edit Part Modal -->
+        <div id="partModal" class="modal" style="display: none;">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="partModalTitle">Add New Part</h2>
+            <form id="partForm">
+              <input type="hidden" id="partId">
+              
+              <div class="form-group">
+                <label for="partName">Part Name *</label>
+                <input type="text" id="partName" class="form-control" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="partPrice">Price *</label>
+                <input type="number" id="partPrice" class="form-control" step="0.01" min="0" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="partStock">Stock *</label>
+                <input type="number" id="partStock" class="form-control" min="0" required>
+              </div>
+              
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">Save Part</button>
+                <button type="button" class="btn-secondary" id="cancelPartBtn">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
 
       <!-- Customer Report Tab -->
