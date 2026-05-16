@@ -1,0 +1,16 @@
+{
+  "VALID_OWNER_TYPES": [
+    "ServiceOwners",
+    "SourceOwners"
+  ],
+  "VALID_LABEL_TYPES": [
+    "PRLabels",
+    "ServiceLabels"
+  ],
+  "VALID_FORMATS": [
+
+  ],
+  "REQUIRED_ORGANIZATIONS": [
+
+  ]
+}
