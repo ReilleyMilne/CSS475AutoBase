@@ -11,6 +11,6 @@
 
   ],
   "REQUIRED_ORGANIZATIONS": [
-    ReilleyMilneTest
+    "ReilleyMilneTest"
   ]
 }
