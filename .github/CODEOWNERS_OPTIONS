@@ -1,12 +1,12 @@
 {
-  "ValidOwnerTypes": ["Primary", "Secondary"],
-  "RequiredOwnerTypes": ["Primary"],
+  "ValidOwnerTypes": ["PrimaryOwners", "SecondaryOwners"],
+  "RequiredOwnerTypes": ["PrimaryOwners"],
   "ValidLabelTypes": ["PRLabel"],
   "RequiredLabelTypes": ["PRLabel"],
   "RequiredOrganizations": ["ReilleyMilneTest"],
   "Format": {
-    "EntryOrder": ["Primary", "Secondary"],
-    "OwnerOrder": ["Primary", "Secondary"],
+    "EntryOrder": ["PrimaryOwners", "SecondaryOwners"],
+    "OwnerOrder": ["PrimaryOwners", "SecondaryOwners"],
     "LabelOrder": ["PRLabel"]
   }
 }
