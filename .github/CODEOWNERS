@@ -1,14 +1,14 @@
-# Service: Frontend
+# Service: %Frontend
 /Frontend @ReilleyMilne
 # PRLabel: %Frontend
 # PrimaryOwners: @ReilleyMilne
 
-# Service: Backend
+# Service: %Backend
 /Backend @ReilleyMilne
 # PRLabel: %Backend
 # PrimaryOwners: @ReilleyMilne
 
-# Service: Database
+# Service: %Database
 /Database @ReilleyMilne
 # PRLabel: %Database
 # PrimaryOwners: @ReilleyMilne
