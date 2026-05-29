@@ -1,16 +1,12 @@
 {
-  "VALID_OWNER_TYPES": [
-    "ServiceOwners",
-    "SourceOwners"
-  ],
-  "VALID_LABEL_TYPES": [
-    "PRLabels",
-    "ServiceLabels"
-  ],
-  "VALID_FORMATS": [
-
-  ],
-  "REQUIRED_ORGANIZATIONS": [
-    "ReilleyMilneTest"
-  ]
+  "ValidOwnerTypes": ["Primary", "Secondary"],
+  "RequiredOwnerTypes": ["Primary"],
+  "ValidLabelTypes": ["PRLabel"],
+  "RequiredLabelTypes": ["PRLabel"],
+  "RequiredOrganizations": ["ReilleyMilneTest"],
+  "Format": {
+    "EntryOrder": ["Primary", "Secondary"],
+    "OwnerOrder": ["Primary", "Secondary"],
+    "LabelOrder": ["PRLabel"]
+  }
 }
